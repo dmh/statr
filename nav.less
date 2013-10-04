@@ -1,0 +1,35 @@
+.header{
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    top: 2rem;
+    left: 0;
+    z-index: 11;
+    // background: red;
+  // text-align: left;
+  & a{display: inline-block;}
+}
+.header.black{
+    background: #000;
+}
+.logo{
+  .linef(4);
+  text-align: left;
+  padding: 10px 0 0 30px;
+}
+.main-nav{
+.linef(5);
+.push(3);
+padding: 8px 0;
+}
+.main-nav__item{
+ font-size: 14px;
+padding: 6px 10px;
+margin-left: 30px;
+
+}
+.main-nav__item.active{border: 2px solid #dd1036; border-radius: 18px;}
+.main-nav__item:hover{
+  // border: 1px solid #dd1036;
+  border-radius: 18px;
+  background: #dd1036;}
