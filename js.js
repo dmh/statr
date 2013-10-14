@@ -112,17 +112,35 @@
 $(function(){
 // =================================
 
+// =========smart resize===================
+  (function($,sr){
 
-//=========resize page height==========
-;(function(){
-    var aaa = window.innerHeight;
-    var bbb = aaa /10 + 'rem'
-    var ccc = $('.slide-height');
-    ccc.css('height', bbb);
-    // $(window).on('resize', function(){
-        // ccc.css('height', window.innerHeight / 10 + 'rem');
-    // });
-}());
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          };
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  }
+  // smartresize
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+  })(jQuery,'smartresize');
+// =================================
 
 
 //=========main menu black==========
@@ -235,15 +253,27 @@ var pagg = $('.pagination');
     var aaa = $('#login');
     var bbb = $('.main-nav');
     aaa.hide();
-    // fadeIn()
     bbb.find('a[href="#login"]').on('click', function(){
-        // aaa.show();
         aaa.fadeIn('slow');
         return false;
     });
     $('.login__close, .login__background').on('click', function(){
         aaa.hide();
         return false;
+    });
+}());
+
+
+//=========resize page height==========
+;(function(){
+    var aaa = window.innerHeight;
+    var bbb = aaa /10 + 'rem'
+    var ccc = $('.slide-height');
+    ccc.css('height', bbb);
+    $(window).smartresize(function(){
+        ccc.css('height', window.innerHeight / 10 + 'rem');
+        var ar = ['#one', '#two', '#three', '#four', '#five', '#six'];
+        $(this).scrollTop(window.innerHeight * ar.indexOf(window.location.hash));
     });
 }());
 
