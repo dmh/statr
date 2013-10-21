@@ -181,10 +181,27 @@ var pagg = $('.pagination');
                 stop = 0;
             });
         };
+        if ( ccc  === '#three' || ccc === '#four' || ccc === '#five') {$(ccc).find('.slide-small-box, .foto__text').addClass('anima-small-slide') };
         return false;
     });
 
 }());
+//=========pagination click animation==========
+(function(){
+        var aaa = $('#six');
+        aaa.find('.pricing').on('click', function(){
+            aaa.find('.slide-long__form').removeClass('show');
+            aaa.find('.table').addClass('show');
+            return false;
+        });
+        aaa.find('.question').on('click.que', function(){
+            aaa.find('.table').removeClass('show');
+            aaa.find('.slide-long__form').addClass('show');
+            return false;
+        });
+
+}());
+
 
 // ======= others buttons animation===============
 (function(){
@@ -192,6 +209,7 @@ var pagg = $('.pagination');
         var ccc = $(this).attr('href');
         var ddd = 'a[href="' + ccc + '"]';
         pagg.find(ddd).trigger('click.pagg');
+        if ($(this).hasClass('contact')) {$('#six').find('.question').trigger('click.que')};
         return false;
     });
 }());
@@ -252,13 +270,12 @@ var pagg = $('.pagination');
 (function(){
     var aaa = $('#login');
     var bbb = $('.main-nav');
-    aaa.hide();
     bbb.find('a[href="#login"]').on('click', function(){
-        aaa.fadeIn('slow');
+        aaa.addClass('show');
         return false;
     });
     $('.login__close, .login__background').on('click', function(){
-        aaa.hide();
+        aaa.removeClass('show');
         return false;
     });
 }());

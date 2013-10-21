@@ -11,7 +11,7 @@
 
 <!--=====================================================-->
 <link rel="stylesheet" href="styles.css">
-<script src="http://localhost:35729/livereload.js"></script>
+<!-- <script src="http://localhost:35729/livereload.js"></script> -->
 <!--=====================================================-->
 <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -73,48 +73,54 @@
         <!-- =================slide-three================= -->
             <div id="three" class="slide-three slide-height">
                 <div class="texture"></div>
-                <div class="slide-small red">
+                <div class="slide-small">
                     <span class="foto__text">Do you really know common user flow of your application?</span>
-                    <span class="slide-small__text">User Flow Map</span>
-                    <span class="slide-small__text">Usage map will help you to understand real user flow from <br> window to window, so you can optimise user expirience</span>
-                    <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    <div class="slide-small-box red">
+                        <span class="slide-small__text">User Flow Map</span>
+                        <span class="slide-small__text">Usage map will help you to understand real user flow from <br> window to window, so you can optimise user expirience</span>
+                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    </div>
                 </div>
             </div>
 
         <!-- =================slide-four================= -->
             <div id="four" class="slide-four slide-height">
                 <div class="texture"></div>
-                <div class="slide-small yellow">
+                <div class="slide-small">
                     <span class="foto__text">Do you know which area is most clicked or touched in your software?</span>
-                    <span class="slide-small__text">Heat Map</span>
-                    <span class="slide-small__text">With Heat Map you can see a hot areas and reorganize your <br> buttons, triggers or other controls and make them visible for your users</span>
-                    <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    <div class="slide-small-box yellow">
+                        <span class="slide-small__text">Heat Map</span>
+                        <span class="slide-small__text">With Heat Map you can see a hot areas and reorganize your <br> buttons, triggers or other controls and make them visible for your users</span>
+                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    </div>
                 </div>
             </div>
 
         <!-- =================slide-five================= -->
             <div id="five" class="slide-five slide-height">
                 <div class="texture"></div>
-                <div class="slide-small blue">
+                <div class="slide-small">
                     <span class="foto__text">Do you know how many free users purchase your paid plan?</span>
-                    <span class="slide-small__text">Conversion Funnel</span>
-                    <span class="slide-small__text">Unique Analytic before the conversion. <br> Show you real data of positive and negative conversions</span>
-                    <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    <div class="slide-small-box blue">
+                        <span class="slide-small__text">Conversion Funnel</span>
+                        <span class="slide-small__text">Unique Analytic before the conversion. <br> Show you real data of positive and negative conversions</span>
+                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                    </div>
                 </div>
             </div>
 
         <!-- =================slide-six================= -->
             <div id="six" class="slide-six slide-height">
                 <div class="slide-long">
-                    <div class="bbb">
+                    <div class="slide-long-box">
                     <span class="slide-long__text">Well, lets statr enhance your product </span>
-                    <a class="slide-long__link" href="" target="_blank"><span>Create Free Account</span></a>
-                    <a class="slide-long__link" href="" target="_blank"><span>See pricing</span></a>
-                    <a class="slide-long__link" href="" target="_blank"><span>I have question</span></a>
+                    <a class="slide-long__link" href="" ><span>Create Free Account</span></a>
+                    <a class="slide-long__link pricing" href="" ><span>See pricing</span></a>
+                    <a class="slide-long__link question" href="" ><span>I have question</span></a>
                     </div>
 
             <!-- ===============contact form============ -->
-                    <form class="slide-long__form">
+                    <form class="slide-long__form show">
                         <span class="slide-long__text">Feel free to ask us about anything</span>
                         <input type="text" class="slide-long__input" placeholder="Name">
                         <input type="text" class="slide-long__input" placeholder="Email">
@@ -273,7 +279,7 @@
 
 </div>
 <!-- ============sign in================ -->
-<div id="login" class="login-wrap">
+<div id="login" class="login-wrap" >
     <div class="login__background"></div>
     <div class="login">
         <form class="login__form">
