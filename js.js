@@ -164,8 +164,8 @@ var pagg = $('.pagination');
 //=========pagination click animation==========
 ;(function(){
     var aaa = $('html,body');
-    aaa.animate({ scrollTop: 0 },500);
-    window.location.hash = '#one';
+    // aaa.animate({ scrollTop: 0 },500);
+    // window.location.hash = '#one';
     pagg.find('a[href="#one"]').css('background-color', '#dd1036');
     var stop = 0;
     pagg.find('a').on('click.pagg ', function(event){
@@ -181,7 +181,7 @@ var pagg = $('.pagination');
                 stop = 0;
             });
         };
-        if ( ccc  === '#three' || ccc === '#four' || ccc === '#five') {$(ccc).find('.slide-small-box, .foto__text').addClass('anima-small-slide') };
+        // if ( ccc  === '#three' || ccc === '#four' || ccc === '#five') {$(ccc).find('.slide-small-box, .foto__text').addClass('anima-small-slide') };
         return false;
     });
 
@@ -292,6 +292,52 @@ var pagg = $('.pagination');
         var ar = ['#one', '#two', '#three', '#four', '#five', '#six'];
         $(this).scrollTop(window.innerHeight * ar.indexOf(window.location.hash));
     });
+}());
+
+
+//=========touch==========
+;(function(){
+    var scroll = function scroll (sc){
+        var aaa = $(sc);
+
+aaa.addEventListener('touchmove', function(e) {
+
+
+    e.preventDefault();
+    var touch = e.touches[0];
+    alert(touch.pageX + " - " + touch.pageY);
+
+
+
+}, false);
+
+        // aaa.on('mousewheel', function(event, delta) {
+        //     if (delta === -1) {
+        //         var ccc = $(this).next().attr('id');
+        //         var ddd = 'a[href="#' + ccc + '"]';
+        //         pagg.find(ddd).trigger('click.pagg');
+        //     }
+        //     else if (delta === 1) {
+        //         var ccc = $(this).prev().attr('id');
+        //         var ddd = 'a[href="#' + ccc + '"]';
+        //         pagg.find(ddd).trigger('click.pagg');
+        //     }
+        //     else{
+        //         return false;
+        //     };
+        // return false;
+        // });
+
+
+
+
+    };
+    scroll('#one');
+    scroll('#two');
+    scroll('#three');
+    scroll('#four');
+    scroll('#five');
+    scroll('#six');
 }());
 
 
