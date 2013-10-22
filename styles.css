@@ -795,30 +795,16 @@ a {
   z-index: 5;
 }
 
-.slide-small:after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: -30px;
-  left: 0;
-  height: 30px;
-  background: transparent;
-  border-left: 30px solid #333;
-  border-right: 30px solid transparent;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid #333;
-}
-
-.slide-small__text:nth-child(1) {
+.slide-small__text:nth-child(2) {
   font-size: 80px;
   font-family: nexa_boldregular, Arial, sans-serif;
   width: 66.66666666666667%;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 20px;
 }
 
-.slide-small__text:nth-child(2) {
+.slide-small__text:nth-child(3) {
   font-size: 20px;
   width: 66.66666666666667%;
   margin: 0 auto;
@@ -879,10 +865,6 @@ a {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-}
-
-.slide-small.blue {
-  background: url(images/blue.jpg);
 }
 
 .slide-small-box.blue {
@@ -954,6 +936,70 @@ a {
   margin: 0 auto;
   margin-top: 30px;
   color: #fff;
+}
+
+.triangle {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  height: 22px;
+  width: 50%;
+  margin-left: -36px;
+}
+
+.triangle:after {
+  content: '';
+  position: absolute;
+  height: 22px;
+  width: 72px;
+  top: 0;
+  right: -72px;
+}
+
+.slide-small-box:before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  right: 0;
+  height: 22px;
+  width: 50%;
+  margin-right: -36px;
+}
+
+.red .triangle {
+  background: url(images/red.jpg);
+}
+
+.red .triangle:after {
+  background-image: url('images/triangle-red.png');
+}
+
+.red.slide-small-box:before {
+  background: url(images/red.jpg);
+}
+
+.yellow .triangle {
+  background: url(images/yellow.jpg);
+}
+
+.yellow .triangle:after {
+  background-image: url('images/triangle-yellow.png');
+}
+
+.yellow.slide-small-box:before {
+  background: url(images/yellow.jpg);
+}
+
+.blue .triangle {
+  background: url(images/blue.jpg);
+}
+
+.blue .triangle:after {
+  background-image: url('images/triangle-blue.png');
+}
+
+.blue.slide-small-box:before {
+  background: url(images/blue.jpg);
 }
 
 .footer {
