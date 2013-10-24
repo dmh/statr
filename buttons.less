@@ -1,0 +1,95 @@
+/*
+  Reset Default behavior for focused inputs and links Chrome;
+*/
+a:focus,
+input[type="text"]:focus,
+button:focus{
+  outline: none;
+}
+/*
+  Adding Button States: on hover + active;
+*/
+.slide-small__link{
+  overflow: hidden;
+    //background-color: transparent;
+    background-image: url(images/buttons-overlay.png);
+    background-position: -300px 0;
+    background-repeat: no-repeat;
+
+    border-radius: 20px;
+    transition: background-position linear 0.75s;
+
+  &:hover{
+    transition: background-position linear 0.75s;
+
+    background-position: 0 0;
+  }
+
+  &:hover,
+  &:focus{
+
+  }
+
+  &:active,
+  &.active{
+    top: 2px;
+  }
+}
+
+.slide-long__link:nth-child(2),
+.slide-long__btn,
+.login__social-block .login__social-link,
+.login__sign-in{
+  max-width: 250px;
+}
+
+.slide-long__link:nth-child(2),
+.slide-long__btn,
+.login__social-block .login__social-link,
+.login__sign-in{
+  overflow: hidden;
+  //background-color: transparent;
+  background-image: url(images/buttons-overlay.png);
+  background-position: -300px 0;
+  background-repeat: no-repeat;
+
+  border-radius: 20px;
+  transition: background-position linear 0.75s;
+
+  &:hover{
+    transition: background-position linear 0.75s;
+
+    background-position: 0px 0;
+  }
+
+  &:hover,
+  &:focus{
+
+  }
+
+  &:active,
+  &.active{
+    top: 2px;
+  }
+}
+.slide-long__link:nth-child(2){
+  background-image: url(images/buttons-overlay-green.png);
+}
+  .slide-long__btn{
+    background-image: url(images/buttons-overlay-lred.png);
+  }
+.login__social-block .login__social-link{
+   &.facebook{
+      background-image: url(images/buttons-overlay-fb.png);
+    }
+  &.google{
+      background-image: url(images/buttons-overlay-gp.png);
+    }
+  &.linkedin{
+      background-image: url(images/buttons-overlay-lnkin.png);
+    }
+  }
+
+.login__sign-in{
+  background-image: url(images/buttons-overlay-lred-small.png);
+}

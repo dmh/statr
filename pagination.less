@@ -26,6 +26,35 @@
         background-color: #aaa;
     }
 }
+// Pagination Hover states:
+.pagination li{
+  position: relative;
+  .pagination__link{
+    position: relative;
+    z-index: 20;
+  }
+  &:before{
+    content: attr(data-cpage);
+    position: absolute;
+    top: -4px;
+    right: 34px;
+    white-space: nowrap;
+    background-color: #dd1036;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1;
+
+    padding: 6px 36px 5px 16px;
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+
+  }
+  &:hover:before{
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
+}
 // .pagination ul:nth-child(1){
     // background-color: red;
 // }
