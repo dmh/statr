@@ -666,6 +666,37 @@ a {
   background-color: #aaa;
 }
 
+.pagination li {
+  position: relative;
+}
+
+.pagination li .pagination__link {
+  position: relative;
+  z-index: 20;
+}
+
+.pagination li:before {
+  content: attr(data-cpage);
+  position: absolute;
+  top: -4px;
+  right: 34px;
+  white-space: nowrap;
+  background-color: #dd1036;
+  border-radius: 15px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 36px 5px 16px;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+
+.pagination li:hover:before {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+
 .pagination.hide {
   display: none;
 }
@@ -704,9 +735,9 @@ a {
   font-size: 7rem;
   -webkit-animation: transY 2s .4s ease forwards;
   animation: transY 2s .4s ease forwards;
-  -webkit-transform: translateY(30px);
-  -ms-transform: translateY(30px);
-  transform: translateY(30px);
+  -webkit-transform: translateY(90px);
+  -ms-transform: translateY(90px);
+  transform: translateY(90px);
   opacity: 0;
 }
 
@@ -742,8 +773,8 @@ a {
   margin-left: -80px;
   bottom: 2rem;
   cursor: pointer;
-  -webkit-animation: transY 2s 1s ease forwards;
-  animation: transY 2s 1s ease forwards;
+  -webkit-animation: transY 4s 2s ease forwards;
+  animation: transY 4s 2s ease forwards;
   -webkit-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
   transform: translateY(-30px);
@@ -755,7 +786,7 @@ a {
 }
 
 .slide-two {
-  background-color: #05080a;
+  background-color: #141e30;
 }
 
 .black__text {
@@ -1061,13 +1092,20 @@ a {
   top: -30px;
   right: -30px;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 16px;
   cursor: pointer;
-  font-size: 40px;
-  line-height: 1;
-  font-weight: bold;
-  color: #fff;
+  background-image: url(images/close_btn.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.login__close:hover {
+  -webkit-transform: rotate(-360deg);
+  -ms-transform: rotate(-360deg);
+  transform: rotate(-360deg);
 }
 
 .login__background {
@@ -1082,6 +1120,7 @@ a {
 
 .login {
   position: relative;
+  max-width: 640px;
   width: 41.66666666666667%;
   margin: 0 auto;
   background: #05080a;
@@ -1122,7 +1161,7 @@ a {
   position: absolute;
   z-index: 50;
   top: 140px;
-  left: 72%;
+  right: 8.33334%;
   font-size: 13px;
   text-decoration: underline;
   color: #00abf0;
@@ -1158,7 +1197,6 @@ a {
   display: block;
   color: #fff;
   padding: 20px 0;
-  margin-left: 6%;
   margin-bottom: 20px;
 }
 
@@ -1217,6 +1255,40 @@ a {
 .show {
   visibility: visible !important;
   opacity: 1  !important;
+}
+
+.login__form .login__checkbox input[type='checkbox'] {
+  position: relative;
+  top: 3px;
+  left: 2px;
+  z-index: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.login__form .login__checkbox input[type='checkbox'] + span {
+  position: relative;
+}
+
+.login__form .login__checkbox input[type='checkbox'] + span:before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  left: -15px;
+  top: 1px;
+  background-image: url(images/checkboxes_bg.gif);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  z-index: 0;
+}
+
+.login__form .login__checkbox input[type='checkbox'] + span:before {
+  cursor: pointer;
+}
+
+.login__form .login__checkbox input[type='checkbox']:checked + span:before {
+  background-position: 0 -15px;
 }
 
 .table td {
@@ -1382,4 +1454,103 @@ a {
   html {
     font-size: 25%;
   }
+}
+
+/*
+  Reset Default behavior for focused inputs and links Chrome;
+*/
+
+a:focus,
+input[type="text"]:focus,
+button:focus {
+  outline: none;
+}
+
+/*
+  Adding Button States: on hover + active;
+*/
+
+.slide-small__link {
+  overflow: hidden;
+  background-image: url(images/buttons-overlay.png);
+  background-position: -300px 0;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  -webkit-transition: background-position linear 0.75s;
+  transition: background-position linear 0.75s;
+}
+
+.slide-small__link:hover {
+  -webkit-transition: background-position linear 0.75s;
+  transition: background-position linear 0.75s;
+  background-position: 0 0;
+}
+
+.slide-small__link:active,
+.slide-small__link.active {
+  top: 2px;
+}
+
+.slide-long__link:nth-child(2),
+.slide-long__btn,
+.login__social-block .login__social-link,
+.login__sign-in {
+  max-width: 250px;
+}
+
+.slide-long__link:nth-child(2),
+.slide-long__btn,
+.login__social-block .login__social-link,
+.login__sign-in {
+  overflow: hidden;
+  background-image: url(images/buttons-overlay.png);
+  background-position: -300px 0;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  -webkit-transition: background-position linear 0.75s;
+  transition: background-position linear 0.75s;
+}
+
+.slide-long__link:nth-child(2):hover,
+.slide-long__btn:hover,
+.login__social-block .login__social-link:hover,
+.login__sign-in:hover {
+  -webkit-transition: background-position linear 0.75s;
+  transition: background-position linear 0.75s;
+  background-position: 0px 0;
+}
+
+.slide-long__link:nth-child(2):active,
+.slide-long__btn:active,
+.login__social-block .login__social-link:active,
+.login__sign-in:active,
+.slide-long__link:nth-child(2).active,
+.slide-long__btn.active,
+.login__social-block .login__social-link.active,
+.login__sign-in.active {
+  top: 2px;
+}
+
+.slide-long__link:nth-child(2) {
+  background-image: url(images/buttons-overlay-green.png);
+}
+
+.slide-long__btn {
+  background-image: url(images/buttons-overlay-lred.png);
+}
+
+.login__social-block .login__social-link.facebook {
+  background-image: url(images/buttons-overlay-fb.png);
+}
+
+.login__social-block .login__social-link.google {
+  background-image: url(images/buttons-overlay-gp.png);
+}
+
+.login__social-block .login__social-link.linkedin {
+  background-image: url(images/buttons-overlay-lnkin.png);
+}
+
+.login__sign-in {
+  background-image: url(images/buttons-overlay-lred-small.png);
 }

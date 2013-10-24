@@ -17,15 +17,18 @@
     top: -30px;
     right: -30px;
     display: block;
-    width: 20px;
-    height: 20px;
-    // content: 'dsfdsg';
-    // background: #999;
+    width: 18px;
+    height: 16px;
     cursor: pointer;
-    font-size: 40px;
-    line-height: 1;
-    font-weight: bold;
-    color: #fff;
+    background-image: url(images/close_btn.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    transition: transform 0.2s linear;
+}
+.login__close:hover{
+  transform: rotate(-360deg);
+
 }
 .login__background{
     position: absolute;
@@ -38,6 +41,7 @@
 }
 .login{
     position: relative;
+    max-width: 640px;
  .line-c(5);
  .fix();
  // width: 400px;
@@ -73,7 +77,7 @@ z-index: 30;
     position: absolute;
     z-index: 50;
     top: 140px;
-    left: 72%;
+    right: 8.33334%;
     font-size: 13px;
     text-decoration: underline;
     color: #00abf0;
@@ -118,7 +122,7 @@ z-index: 30;
     color: #fff;
     padding: 20px 0;
     // text-align: center;
-    margin-left: 6%;
+    //margin-left: 6%;
     // margin-top: 10px;
     margin-bottom: 20px;
     a{
@@ -170,4 +174,37 @@ padding: 20px 0;
       visibility: visible !important;
   opacity: 1  !important;
   // display: block !important;
+}
+
+//  Custom Checkboxes;
+.login__form .login__checkbox input[type='checkbox']{
+  position: relative;
+  top: 3px;
+  left: 2px;
+  z-index: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+.login__form .login__checkbox input[type='checkbox'] + span{
+  position: relative;
+
+  &:before{
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    left: -15px;
+    top: 1px;
+    background-image: url(images/checkboxes_bg.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    z-index: 0;
+
+  }
+}
+.login__form .login__checkbox input[type='checkbox'] + span:before{
+  cursor: pointer;
+}
+.login__form .login__checkbox input[type='checkbox']:checked + span:before{
+  background-position: 0 -15px;
 }
