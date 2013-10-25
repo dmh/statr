@@ -3,23 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport" >
+<meta content="width=device-width, initial-scale=1,  user-scalable=no" name="viewport" >
 <title></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'>
-
 
 <!--=====================================================-->
 <link rel="stylesheet" href="styles.css">
 <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 <!--=====================================================-->
-<!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js.js"></script>
-
-
 
 </head>
 <body>
@@ -38,25 +30,26 @@
         </header>
         <div class="pagination">
             <ul>
-                <li><a href="#one" class="pagination__link"></a></li>
-                <li><a href="#two" class="pagination__link"></a></li>
-                <li><a href="#three" class="pagination__link"></a></li>
-                <li><a href="#four" class="pagination__link"></a></li>
-                <li><a href="#five" class="pagination__link"></a></li>
-                <li><a href="#six" class="pagination__link"></a></li>
+                <li data-cpage = "Home"><a href="#one" class="pagination__link"></a></li>
+                <li data-cpage = "How it Works?"><a href="#two" class="pagination__link"></a></li>
+                <li data-cpage = "User Flow Map"><a href="#three" class="pagination__link"></a></li>
+                <li data-cpage = "Heat Map"><a href="#four" class="pagination__link"></a></li>
+                <li data-cpage = "Conversion Funnel"><a href="#five" class="pagination__link"></a></li>
+                <li data-cpage = "Get STATR"><a href="#six" class="pagination__link"></a></li>
             </ul>
         </div>
-
         <div class="all-slides">
 
         <!-- =================slide-one================= -->
             <div id="one" class="slide-one slide-height">
+                <div class="texture"></div>
                 <div class="slide-big top">
                     <div class="text">
                     <img class="text-art" src="images/art-of.png">
                     <span class="text-two">Software Enhancing</span>
                     <span class="text-tree">by measuring Usage experience</span>
                     <span class="text-four">available on Every platform</span>
+                    <span class="text-five"><img src="images/platforms-icons.png" alt=""/></span>
                     </div>
                     <a href="#two" class="scrol-icon">
                     <span class="scrol-icon__text">Scroll down</span>
@@ -68,6 +61,7 @@
         <!-- =================slide-two================= -->
             <div id="two" class="slide-two slide-height">
                     <span class="black__text">How Does It Work?</span>
+                    <span class="black__text__secondary">Let's see</span>
             </div>
 
         <!-- =================slide-three================= -->
@@ -76,9 +70,10 @@
                 <div class="slide-small">
                     <span class="foto__text">Do you really know common user flow of your application?</span>
                     <div class="slide-small-box red">
+                        <div class="triangle"></div>
                         <span class="slide-small__text">User Flow Map</span>
                         <span class="slide-small__text">Usage map will help you to understand real user flow from <br> window to window, so you can optimise user expirience</span>
-                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                        <a class="slide-small__link" href="" ><span>Try it</span></a>
                     </div>
                 </div>
             </div>
@@ -89,9 +84,10 @@
                 <div class="slide-small">
                     <span class="foto__text">Do you know which area is most clicked or touched in your software?</span>
                     <div class="slide-small-box yellow">
+                        <div class="triangle"></div>
                         <span class="slide-small__text">Heat Map</span>
                         <span class="slide-small__text">With Heat Map you can see a hot areas and reorganize your <br> buttons, triggers or other controls and make them visible for your users</span>
-                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                        <a class="slide-small__link" href="" ><span>Try it</span></a>
                     </div>
                 </div>
             </div>
@@ -102,9 +98,10 @@
                 <div class="slide-small">
                     <span class="foto__text">Do you know how many free users purchase your paid plan?</span>
                     <div class="slide-small-box blue">
+                        <div class="triangle"></div>
                         <span class="slide-small__text">Conversion Funnel</span>
                         <span class="slide-small__text">Unique Analytic before the conversion. <br> Show you real data of positive and negative conversions</span>
-                        <a class="slide-small__link" href="" target="_blank"><span>Try it</span></a>
+                        <a class="slide-small__link" href="" ><span>Try it</span></a>
                     </div>
                 </div>
             </div>
@@ -121,7 +118,7 @@
 
             <!-- ===============contact form============ -->
                     <form class="slide-long__form show">
-                        <span class="slide-long__text">Feel free to ask us about anything</span>
+                        <span class="slide-long__text loginn">Feel free to ask us about anything</span>
                         <input type="text" class="slide-long__input" placeholder="Name">
                         <input type="text" class="slide-long__input" placeholder="Email">
                         <input type="text" class="slide-long__input" placeholder="Text here">
@@ -264,13 +261,15 @@
             <!-- ===========fotter============= -->
                 <footer role="contentinfo" class="footer">
                     <span class="footer__text">©2013 STATR, Inc. All rights reserved</span>
-                    <span class="footer__text">Connect with us</span>
+                    <div class="footer__text-icons">
+                    <span class="footer__text--connect">Connect with us</span>
                     <div class="footer__icons" >
                         <a href="" class="footer__social-icon"><img alt="facebook" src="images/facebook.png"></a>
                         <a href="" class="footer__social-icon"><img alt="twitter" src="images/twitter.png"></a>
                         <a href="" class="footer__social-icon"><img alt="linkedin" src="images/linkedin.png"></a>
                         <a href="" class="footer__social-icon"><img alt="google-plus" src="images/google-plus.png"></a>
                         <a href="" class="footer__social-icon"><img alt="youtube" src="images/youtube.png"></a>
+                    </div>
                     </div>
                 </footer>
             </div>
@@ -291,7 +290,7 @@
              <input type="checkbox" id="checkbox1">
              <span> Remember me</span></label>
              <button type="submit" class="login__sign-in">Sign In</button>
-             <span class="login__not-member">Not a member?<a href="">Create your free account now!</a></span>
+             <span class="login__not-member">Not a member? <a href="">Create your free account now!</a></span>
         </form>
         <div class="login__social-block">
             <span class="login__social-text">Or, Sign In Using...</span>
@@ -303,5 +302,8 @@
     </div>
 </div>
 <!-- =================================== -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="swipe.js"></script>
+<script src="js.js"></script>
 </body>
 </html>

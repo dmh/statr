@@ -147,11 +147,13 @@ $(function(){
 ;(function(){
     var aaa = $('.header');
     $(window).scroll(function(){
-        if ($(window).scrollTop() > $('#one').height() ) {
-            aaa.css('background', '#000');
+        if ($(window).scrollTop() >= $('#one').height() ) {
+            //aaa.css('background', '#000');
+            aaa.addClass('fixed')
         }
         else{
-             aaa.css('background', 'transparent')
+             //aaa.css('background', 'transparent')
+             aaa.removeClass('fixed');
         };
         return false;
     });
@@ -160,6 +162,26 @@ $(function(){
 
 //=========half global var==========
 var pagg = $('.pagination');
+
+// ==============helper function====================
+function helper (as,www){
+    if ( as.keyCode === 40 || as.keyCode === 39 || as === 'up' || as === -1){
+        var ccc = www.next().attr('id');
+        var ddd = 'a[href="#' + ccc + '"]';
+        pagg.find(ddd).trigger('click.pagg');
+    }
+    else if ( as.keyCode === 38 || as.keyCode === 37 || as === 'down' || as === 1) {
+            var ccc = www.prev().attr('id');
+            var ddd = 'a[href="#' + ccc + '"]';
+            pagg.find(ddd).trigger('click.pagg');
+    }
+    else{
+        return false;
+    };
+};
+// =========================================
+
+
 
 //=========pagination click animation==========
 ;(function(){
@@ -186,7 +208,7 @@ var pagg = $('.pagination');
     });
 
 }());
-//=========pagination click animation==========
+//=========footer tabs==========
 (function(){
         var aaa = $('#six');
         aaa.find('.pricing').on('click', function(){
@@ -218,53 +240,12 @@ var pagg = $('.pagination');
 //========= keyup animation==========
 ;(function(){
     $(window).on('keydown', function (e) {
-      var aaa = window.location.hash;
-      if ( e.keyCode === 38 || e.keyCode === 37) {
-            var ccc = $(aaa).prev().attr('id');
-            var ddd = 'a[href="#' + ccc + '"]';
-            pagg.find(ddd).trigger('click.pagg');
-      }
-      else if ( e.keyCode === 40 || e.keyCode === 39){
-            var ccc = $(aaa).next().attr('id');
-            var ddd = 'a[href="#' + ccc + '"]';
-            pagg.find(ddd).trigger('click.pagg');
-      }
-      else{
-        return true;
-      };
-      return false;
+        var aaa = window.location.hash;
+        var www = $(aaa);
+        var as = e;
+        helper(as, www);
     });
 }());
-
-//========= scroll animation==========
-;(function(){
-    var scroll = function scroll (sc){
-        var aaa = $(sc);
-        aaa.on('mousewheel', function(event, delta) {
-            if (delta === -1) {
-                var ccc = $(this).next().attr('id');
-                var ddd = 'a[href="#' + ccc + '"]';
-                pagg.find(ddd).trigger('click.pagg');
-            }
-            else if (delta === 1) {
-                var ccc = $(this).prev().attr('id');
-                var ddd = 'a[href="#' + ccc + '"]';
-                pagg.find(ddd).trigger('click.pagg');
-            }
-            else{
-                return false;
-            };
-        return false;
-        });
-    };
-    scroll('#one');
-    scroll('#two');
-    scroll('#three');
-    scroll('#four');
-    scroll('#five');
-    scroll('#six');
-}());
-
 
 //=============login form================
 (function(){
@@ -284,18 +265,49 @@ var pagg = $('.pagination');
 //=========resize page height==========
 ;(function(){
     var aaa = window.innerHeight;
-    var bbb = aaa /10 + 'rem'
     var ccc = $('.slide-height');
-    ccc.css('height', bbb);
+    ccc.css('height', aaa);
     $(window).smartresize(function(){
-        ccc.css('height', window.innerHeight / 10 + 'rem');
+        ccc.css('height', window.innerHeight);
         var ar = ['#one', '#two', '#three', '#four', '#five', '#six'];
         $(this).scrollTop(window.innerHeight * ar.indexOf(window.location.hash));
     });
 }());
 
 
+//=========touch & scroll animation==========
+;(function(){
+    var scroll = function scroll (sc){
+        var aaa = $(sc);
+        // ===============swipe================================
+        aaa.swipe( {
+            swipe:function(e, direction) {
+                var www = $(this);
+                var as = direction;
+                helper(as, www);
+            },
+            fallbackToMouseEvents: false,
+            threshold:75
+        });
+        // ==============mousewheel=========================
+        aaa.on('mousewheel', function(e, delta) {
+            var www = $(this);
+            var as = delta;
+            helper(as, www);
+            return false;
+        });
+    };
+    scroll('#one');
+    scroll('#two');
+    scroll('#three');
+    scroll('#four');
+    scroll('#five');
+    scroll('#six');
+}());
 
+
+
+// ================================
 
 
 
