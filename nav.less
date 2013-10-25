@@ -1,17 +1,32 @@
 .header{
+    padding: 20px 0 0;
     position: fixed;
     width: 100%;
-    height: 50px;
+    //height: 50px;
     // height: 5rem;
     top: 0;
     left: 0;
     z-index: 11;
     // background: red;
   // text-align: left;
+  transition: background-color 1s ease-in-out;
   & a{display: inline-block;}
+  .logo,
+  .main-nav{
+    position: relative;
+    top: 0;
+    transition: all 0.75s ease-in-out;
+  }
 }
-.header.black{
-    background: #000;
+.header.fixed{
+  background: #000;
+  transition: background-color 0.75s ease-in-out;
+  .logo,
+  .main-nav{
+    position: relative;
+    top: -10px;
+    transition: all 1s ease-in-out;
+  }
 }
 .logo{
   .linef(4);

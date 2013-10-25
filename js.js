@@ -147,11 +147,13 @@ $(function(){
 ;(function(){
     var aaa = $('.header');
     $(window).scroll(function(){
-        if ($(window).scrollTop() > $('#one').height() ) {
-            aaa.css('background', '#000');
+        if ($(window).scrollTop() >= $('#one').height() ) {
+            //aaa.css('background', '#000');
+            aaa.addClass('fixed')
         }
         else{
-             aaa.css('background', 'transparent')
+             //aaa.css('background', 'transparent')
+             aaa.removeClass('fixed');
         };
         return false;
     });

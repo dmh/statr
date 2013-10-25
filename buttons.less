@@ -48,6 +48,7 @@ button:focus{
 .login__social-block .login__social-link,
 .login__sign-in{
   overflow: hidden;
+  position: relative;
   //background-color: transparent;
   background-image: url(images/buttons-overlay.png);
   background-position: -300px 0;
@@ -88,6 +89,10 @@ button:focus{
   &.linkedin{
       background-image: url(images/buttons-overlay-lnkin.png);
     }
+  &:active,
+  &.active{
+    top: 2px;
+  }
   }
 
 .login__sign-in{
