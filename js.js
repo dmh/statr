@@ -147,7 +147,8 @@ $(function(){
 ;(function(){
     var aaa = $('.header');
     $(window).scroll(function(){
-        if ($(window).scrollTop() >= $('#one').height() ) {
+        // if ($(window).scrollTop() >= $('#one').height() ) {
+        if ($(window).scrollTop() > 10 ) {
             //aaa.css('background', '#000');
             aaa.addClass('fixed')
         }
