@@ -281,7 +281,7 @@ function helper (as,www){
 
 }());
 //=========footer tabs==========
-// (function(){
+(function(){
 //         var aaa = $('#six');
 //         aaa.find('.pricing').on('click', function(){
 //             aaa.find('.slide-long__form').removeClass('show');
@@ -293,8 +293,23 @@ function helper (as,www){
 //             aaa.find('.slide-long__form').addClass('show');
 //             return false;
 //         });
+          var aaa = $('#six');
+          aaa.find('.pricing').on('click', function(){
+            aaa.removeClass('show__form');
+            aaa.addClass('show__pricing');
+            //aaa.find('.slide-long__form').removeClass('show');
+            //aaa.find('.table').addClass('show');
+            return false;
+        });
+        aaa.find('.question').on('click.que', function(){
+            aaa.removeClass('show__pricing');
+            aaa.addClass('show__form');
+            //aaa.find('.table').removeClass('show');
+            //aaa.find('.slide-long__form').addClass('show');
+              return false;
+          });
 
-// }());
+}());
 
 
 //=========resize page height==========
