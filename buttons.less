@@ -98,3 +98,28 @@ button:focus{
 .login__sign-in{
   background-image: url(images/buttons-overlay-lred-small.png);
 }
+
+.table__footer-link{
+  border-radius: 18px;
+  background: #d71036 url(images/buttons-overlay-lred-small.png) -300px 0 no-repeat;
+  transition: background-position linear 0.75s;
+  &:hover{
+    transition: background-position linear 0.75s;
+
+    background-position: 0px 0;
+  }
+
+  &:hover,
+  &:focus{
+
+  }
+
+  &:active,
+  &.active{
+    top: 2px;
+  }
+}
+.table__footer-link.table__footer-link--green{
+  background-color: #58ab3b;
+  background-image: url(images/buttons-overlay-green.png);
+}
