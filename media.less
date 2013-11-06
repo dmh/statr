@@ -2,26 +2,119 @@
     html{
         font-size: 55%;
     }
-    .foto__text {
-    top: -170px;
-    // font-size: 18px;
-    // font-weight: 700;
-    }
+    // .foto__text {
+    // top: -170px;
+    // // font-size: 18px;
+    // // font-weight: 700;
+    // }
 }
 @media (max-width: 920px) {
     html{
         font-size: 50%;
     }
+        .login{
+ // .line-c(8);
+width: 80%;
+
+}
 }
 @media (max-width: 810px) {
     html{
         font-size: 45%;
     }
 }
-@media (max-width: 750px) {
+@media (max-width: 700px) {
     html{
         font-size: 40%;
+        overflow: visible;
     }
+.pagination{
+    display: none;
+}
+.header .main-nav{
+    position: fixed;
+    width: 80%;
+    // height: 100%;
+    top: 80px;
+    left: 10%;
+    background-color: #000;
+    // margin: 20px;
+    padding: 0;
+    border-radius: 18px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    // z-index: -4;
+}
+.mob-menu{
+    // content: '\2630';
+    height: 70px;
+    width: 70px;
+    font-size: 50px;
+    line-height: 70px;
+    vertical-align: middle;
+    // background-color: red;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    display: block;
+    transition: .5s;
+}
+.mob-act{
+    color: #555;
+}
+// .block{
+// display: block !important;
+
+// }
+.mob-menu-act{
+          visibility: visible !important;
+  opacity: 1  !important;
+  // z-index: 12;
+}
+
+.main-nav .main-nav__item{
+    display: block;
+    // margin: 0 10px;
+    margin: 5px 10px;
+    // width: 100%;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #222;
+}
+.main-nav .main-nav__item:nth-child(4){
+    border: none;
+
+}
+.main-nav__item.main-nav__item__special {
+background: none;
+}
+.main-nav__item:active {
+text-shadow: 1px 1px 4px #FFF, -1px -1px 4px #FFF;
+}
+.main-nav__item:hover {
+text-shadow: none;
+}
+.header.fixed{
+  // background: #000;
+  // transition: background-color 0.5s ease-in-out;
+  .main-nav{
+    position: fixed;
+    top: 80px;
+    // left: ;
+    // transition: all 0.5s ease-in-out;
+  }
+}
+    .foto__text {
+top: -440px;
+font-size: 18px;
+// font-weight: 700;
+}
+
+
 }
 @media (max-width: 650px) {
     html{
@@ -32,11 +125,7 @@
     html{
         font-size: 30%;
     }
-    .foto__text {
-top: -140px;
-font-size: 18px;
-// font-weight: 700;
-}
+
 .slide-small__text:nth-child(3) {
 font-size: 14px;
 

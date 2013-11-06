@@ -168,22 +168,9 @@ $(function(){
 //=========half global var==========
 var pagg = $('.pagination');
 
-
 //=========temp==========
-
 !("ontouchstart" in document.documentElement) &&  $('body').addClass('no-touch');
-
-
-// !window.ontouchstart ? $('body').addClass('no-touch') : 0;
-// document.documentElement.ontouchstart && alert('dddd');
-// !("ontouchstart" in document.documentElement)) ? $('body').addClass('no-touch') : $('body').css('display', 'none');
-//$('body').addClass('ddg');
-// !("ontouchstart" in document.documentElement)) {
-// document.documentElement.className += " no-touch";
-// }
-
 //========================
-
 
 // ==============helper function====================
 function helper (as,www){
@@ -203,13 +190,15 @@ function helper (as,www){
 };
 // =========================================
 
-// console.log($.suport.transition);
+    window.location.hash = '#one';
 
 //=========pagination click animation==========
 ;(function(){
-    var aaa = $('html,body');
-    aaa.animate({ scrollTop: 0 },500);
-    window.location.hash = '#one';
+
+function rock(){
+
+    // var aaa = $('html,body');
+    // aaa.animate({ scrollTop: 0 },500);
     pagg.find('a[href="#one"]').css('background-color', '#dd1036');
     var stop = 0;
     // var ddd = $('.slide-height').height();
@@ -278,6 +267,10 @@ function helper (as,www){
         if ( ccc  === '#three' || ccc === '#four' || ccc === '#five') {$(ccc).find('.slide-small-box, .foto__text').addClass('anima-small-slide') };
         return false;
     });
+
+};
+window.innerWidth > 700 &&   rock();
+
 
 }());
 //=========footer tabs==========
@@ -401,6 +394,33 @@ else{
 //     });
 
 
+//=========mobile-menu==========
+(function(){
+    function aaa(){
+        var aaa = $('.mob-menu');
+        var bbb = $('.main-nav');
+        aaa.on('click', function(){
+                aaa.toggleClass('mob-act');
+                bbb.toggleClass('mob-menu-act')
+                return false;
+            });
+    };
+window.innerWidth < 700 &&   aaa();
+
+
+}());
+
+
+
+
+
+
+
+
+
+
+
+
 //=========touch & scroll animation==========
 ;(function(){
     var scroll = function scroll (sc){
@@ -423,15 +443,13 @@ else{
             return false;
         });
     };
-    scroll('#one');
-    scroll('#two');
-    scroll('#three');
-    scroll('#four');
-    scroll('#five');
-    scroll('#six');
-    $('.pagination, .header').swipe({swipe:function(e){}});
-    window.innerWidth < 420 && $(document).swipe({swipe:function(e){}});
+window.innerWidth > 700 &&  scroll('#one') | scroll('#two') | scroll('#three') | scroll('#four') | scroll('#five') | scroll('#six');
+// window.innerWidth > 700 &&
+// window.innerWidth < 700 &&   $(document).on('mousewheel', function(e, delta) {return true;   });
     // $('.pagination, .header').swipe({swipe:function(e){}});
+    // window.innerWidth < 700 && $('#one').swipe({swipe:function(e){return true}});
+    // $('.pagination, .header').swipe({swipe:function(e){}});
+window.innerWidth < 700 && $(window).swipe("disable");
 }());
 
 
