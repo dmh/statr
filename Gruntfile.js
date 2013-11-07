@@ -215,7 +215,7 @@ connect: {
 },
   copy: {
   main: {
-    src: ['index.html','styles.css', 'images/*', 'fonts/*', 'js.js'],
+    src: ['index.html','styles.css', 'images/*', 'fonts/*', 'js.js', 'swipe.js'],
     dest: 'temp/',
   },
 }
