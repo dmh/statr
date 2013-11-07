@@ -250,7 +250,8 @@ window.innerWidth > 700 &&   rock();
     var aaa = window.innerHeight;
     var ccc = $('.slide-height');
     ccc.css('height', aaa);
-
+    window.innerWidth < 700 && $('#six').css({'height':'auto', 'padding-bottom':'110px' });
+    window.innerWidth < 700 && (function (){
     $(window).smartresize(function(){
         ccc.css('height', window.innerHeight);
         var ar = ['#one', '#two', '#three', '#four', '#five', '#six'];
@@ -258,6 +259,8 @@ window.innerWidth > 700 &&   rock();
         var lkj = 'translateY(-'+ plpl + 'px)';
         $('.all-slides').css({'transform': lkj});
     });
+    }());
+
 }());
 
 
@@ -316,9 +319,10 @@ window.innerWidth > 700 &&   rock();
     function aaa(){
         var aaa = $('.mob-menu');
         var bbb = $('.main-nav');
-        aaa.on('click', function(){
+        aaa.on('touchstart', function(){
                 aaa.toggleClass('mob-act');
                 bbb.toggleClass('mob-menu-act')
+                // bbb.addClass('mob-menu-act')
                 return false;
             });
     };
