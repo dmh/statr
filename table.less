@@ -118,11 +118,63 @@
   }
   cite{
     font-style: normal;
-    font-size: 10px;
+    font-size: 11px;
     b{
       font-style: normal;
       font-weight: normal;
       color: #f4505d;
     }
+  }
+}
+
+//=============Mobile Table version:
+.table__mobile__wrap{
+  display: none;
+  margin: 0 4.5%;
+}
+.table__mobile__wrap .table__mobile{
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+.table__mobile__wrap .table__mobile thead{
+  th{
+    padding: 10px 0;
+    font-family: nexa_boldregular, Arial, sans-serif;
+    font-size: 24px;
+    color: #ffec9f;
+    background: #111d33;
+  }
+}
+.table__mobile__wrap .table__mobile tbody{
+  td{
+    padding: 10px 15px;
+    font-weight: 600;
+    text-align: right;
+    background: #17243b;
+    color: #fff;
+    font-size: 13px;
+  }
+  td:first-child{
+    text-align: left;
+  }
+}
+.table__mobile__wrap .table__mobile tfoot{
+  td{
+    padding: 5px 0;
+    background-color: #111d33;
+    font-size: 13px;
+  }
+}
+
+
+@media only screen
+  and (max-width : 700px) {
+  /* Styles */
+  .table__desktop{
+    display: none;
+  }
+  .table__mobile__wrap{
+    display: block;
   }
 }
