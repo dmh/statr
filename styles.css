@@ -1047,10 +1047,6 @@ a {
   margin: 0 auto;
 }
 
-.slide-long__text.loginn {
-  padding-top: 4rem;
-}
-
 .slide-long__link {
   font-size: 1.8rem;
 }
@@ -1181,6 +1177,9 @@ a {
 
 .slide-six .subslide__take_action {
   padding-top: 8rem;
+  top: 30%;
+  -webkit-transition: top .5s;
+  transition: top .5s;
 }
 
 .slide-six .subslide__table {
@@ -1213,15 +1212,10 @@ a {
   transition: opacity 0.75s linear;
 }
 
-.slide-six.show__form .subslide__take_action .slide-long__text,
-.slide-six.show__pricing .subslide__take_action .slide-long__text {
+.slide-six.show__form .subslide__take_action,
+.slide-six.show__pricing .subslide__take_action {
   /*margin-bottom:0;*/
-  color: #121a2c;
-  position: relative;
-  -webkit-transition: font-size 1s linear, opacity 0.5s linear;
-  transition: font-size 1s linear, opacity 0.5s linear;
-  opacity: 0;
-  font-size: 0px;
+  top: -60px !important;
 }
 
 .footer {
@@ -1503,7 +1497,6 @@ a {
   font-size: 13px;
   border: 1px solid #223351;
   background: #192741;
-  margin-top: 50px;
 }
 
 .table__row {
