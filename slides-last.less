@@ -19,6 +19,8 @@
       .subslide__take_action{
         padding-top: 8rem;
         //display: none;
+        top: 30%;
+        transition: top .5s;
 
       }
       .subslide__table{
@@ -43,6 +45,7 @@
           position: static;
           top: auto;
           opacity: 100;
+
           transition: opacity 0.75s linear;
         }
       }
@@ -53,25 +56,26 @@
           display: block;
           opacity: 100;
           transition: opacity 0.75s linear;
+
         }
       }
 
       &.show__form,
       &.show__pricing{
         .subslide__take_action{
-          .slide-long__text/*,
-          .slide-long__link*/{
+          // .slide-long__text/*,
+          // .slide-long__link*/{
             /*margin-bottom:0;*/
             //
-            color: #121a2c;
-            position: relative;
-            transition: font-size 1s linear,
-                        opacity 0.5s linear;
-
-            opacity: 0;
-            font-size: 0px;
+            // color: #121a2c;
+            // position: relative;
+            // transition: font-size 1s linear,
+                        // opacity 0.5s linear;
+            top: -60px !important;
+            // opacity: 0;
+            // font-size: 0px;
             //transition: margin-bottom 1s linear;
-          }
+          // }
         }
       }
     }
