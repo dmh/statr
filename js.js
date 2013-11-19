@@ -248,17 +248,33 @@ window.innerWidth > 700 &&   rock();
 }());
 //=========footer tabs==========
 ;(function(){
+
     var aaa = $('#six');
         aaa.find('.pricing').on('click', function(){
+        // $(this).addClass('red-link');
+        // aaa.find('.question').removeClass
         aaa.removeClass('show__form');
         aaa.addClass('show__pricing');
+        var that = $(this);
+        redLink(that);
+        // redLink();
         return false;
+
+
     });
     aaa.find('.question').on('click.que', function(){
         aaa.removeClass('show__pricing');
         aaa.addClass('show__form');
+        var that = $(this);
+        redLink(that);
+        // redLink();
         return false;
     });
+        function redLink (that){
+        that.hasClass('pricing') ? that.addClass('redlink') && aaa.find('.question').removeClass('redlink') : aaa.find('.question').addClass('redlink') && aaa.find('.pricing').removeClass('redlink');
+        // console.log(that.hasClass('pricing'));
+        // return console.log(that);
+    };
 
 }());
 

@@ -1059,10 +1059,10 @@ a {
   width: 25%;
   margin: 0 auto;
   margin-top: 3rem;
-  padding: .8rem 0;
+  padding: 1.4rem 0;
   display: block;
   background: #18a840;
-  border-radius: 20px;
+  border-radius: 25px;
   font-family: nexa_boldregular, Arial, sans-serif;
 }
 
@@ -1077,7 +1077,7 @@ a {
 .slide-long__link:nth-child(4) {
   text-decoration: underline;
   display: inline-block;
-  color: #ff0e3c;
+  color: #00abf0;
 }
 
 .slide-long__btn {
@@ -1218,6 +1218,10 @@ a {
   top: -60px !important;
 }
 
+.redlink {
+  color: #ff0e3c !important;
+}
+
 .footer {
   height: 6rem;
   background: #070c17;
@@ -1293,9 +1297,9 @@ a {
 }
 
 .login__close:hover {
-  -webkit-transform: rotate(-360deg);
-  -ms-transform: rotate(-360deg);
-  transform: rotate(-360deg);
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 .login__close:active {
@@ -1513,7 +1517,13 @@ a {
   font-size: 13px;
 }
 
-.table__cell-one:after {
+span.add-hint {
+  cursor: pointer;
+  position: relative;
+  display: inline;
+}
+
+span.add-hint:after {
   content: '\003f';
   font-size: 10px;
   font-weight: bold;
@@ -1522,6 +1532,31 @@ a {
   padding: 0 5px;
   border-radius: 8px;
   color: #17243b;
+}
+
+.no-touch span.add-hint:before {
+  position: absolute;
+  content: attr(data-hint);
+  font-size: 10px;
+  left: 100%;
+  top: -100%;
+  margin-top: -18px;
+  margin-left: -9px;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  width: auto;
+  white-space: nowrap;
+  background-color: rgba(17, 29, 51, 0.75);
+  padding: 10px;
+  opacity: 0;
+  -webkit-transition: opacity linear 0.75s;
+  transition: opacity linear 0.75s;
+}
+
+.no-touch span.add-hint:hover:before {
+  opacity: 1;
+  -webkit-transition: opacity linear 0.75s;
+  transition: opacity linear 0.75s;
 }
 
 .table__header .table__cell-one:after {
@@ -1947,7 +1982,6 @@ button:focus {
   background-image: url(images/buttons-overlay.png);
   background-position: -300px 0;
   background-repeat: no-repeat;
-  border-radius: 20px;
   -webkit-transition: background-position linear 0.75s;
   transition: background-position linear 0.75s;
 }
@@ -2022,4 +2056,8 @@ button:focus {
 .table__footer-link.table__footer-link--green {
   background-color: #58ab3b;
   background-image: url(images/buttons-overlay-green.png);
+}
+
+input[type="text"]:focus {
+  text-shadow: 0 0 10px #fff;
 }
