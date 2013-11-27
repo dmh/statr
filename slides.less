@@ -12,7 +12,7 @@
 }
 // ==============ONE==========
 .slide-one{
-    background: url(images/slide-top-BG.jpg);
+    background: url(images/screen.jpg);
     background-repeat: no-repeat;
   // background-size: contain;
     background-size: cover;
@@ -137,10 +137,20 @@ opacity: 0;
 }
 //===============THREE========================
 .slide-three{
-    background: url(images/foto-one1.jpg);
-    background-repeat: no-repeat;
+    background: url(images/screen1-b.jpg) no-repeat;
     // background-size: contain;
     background-size: cover;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:  url(images/screen1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    }
 
 }
 
@@ -155,7 +165,7 @@ opacity: 0;
 // =====general===
 .texture{
     background: url(images/texture.png);
-    // width: 100%;
+    width: 100%;
     height: 100%;
 }
 .slide-small-box{
@@ -274,11 +284,23 @@ transform: translateY(300px);
 }
 
 //=====FOUR=================================
+
+
 .slide-four{
-    background: url(images/foto-two.jpg);
-    background-repeat: no-repeat;
+  background: url(images/screen2-b.jpg) no-repeat;
   // background-size: contain;
   background-size: cover;
+      &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:  url(images/screen2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    }
 }
 // .slide-small.yellow{
 //   background: url(images/yellow.jpg);
@@ -289,10 +311,19 @@ transform: translateY(300px);
 
 //================FIVE=========================
 .slide-five{
-    background: url(images/foto-three.jpg);
+    background: url(images/screen3-b.jpg) no-repeat;
+    background-size: cover;
+        &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:  url(images/screen3.jpg);
     background-repeat: no-repeat;
-  // background-size: contain;
-  background-size: cover;
+    background-position: center;
+
+    }
 }
 // .slide-small.blue{
 //   background: url(images/blue.jpg);
@@ -349,7 +380,7 @@ transform: translateY(300px);
   font-family: nexa_boldregular, Arial, sans-serif;
   // font-size: 50px;
   font-size: 4rem;
-  .line-c(7);
+  .line-c(5);
   // padding-top: 90px;
       // opacity: 0;
   // visibility: hidden;

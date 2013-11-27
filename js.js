@@ -272,6 +272,7 @@ window.innerWidth > 700 &&   rock();
     });
         function redLink (that){
         that.hasClass('pricing') ? that.addClass('redlink') && aaa.find('.question').removeClass('redlink') : aaa.find('.question').addClass('redlink') && aaa.find('.pricing').removeClass('redlink');
+        setTimeout(function(){$('.slide-long__text').first().css('opacity', 0)},400);
         // console.log(that.hasClass('pricing'));
         // return console.log(that);
     };
