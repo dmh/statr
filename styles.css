@@ -653,6 +653,7 @@ a {
   font-size: 1.4rem;
   padding: .6rem 1rem;
   margin-left: 3rem;
+  border: 2px solid transparent;
 }
 
 .main-nav__item.active {
@@ -697,7 +698,7 @@ a {
 .pagination {
   -webkit-transform: translateZ(0);
   position: fixed;
-  top: 44%;
+  top: 40%;
   right: 0;
   z-index: 10;
 }
@@ -770,7 +771,7 @@ a {
 }
 
 .slide-one {
-  background: url(images/slide-top-BG.jpg);
+  background: url(images/screen.jpg);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -870,15 +871,13 @@ a {
   background-color: #141e30;
   background-image: -webkit-radial-gradient(50% 50%, circle closest-side, rgba(255, 255, 255, 0.0125) 0%, rgba(16, 25, 41, 0.3) 100%);
   background-image: radial-gradient(50% 50%, circle closest-side, rgba(255, 255, 255, 0.0125) 0%, rgba(16, 25, 41, 0.3) 100%);
-  display: table;
   width: 100%;
   height: 100%;
   text-align: center;
 }
 
 .slide-two .text {
-  display: table-cell;
-  vertical-align: middle;
+  padding-top: 150px;
 }
 
 .black__text {
@@ -895,10 +894,20 @@ a {
 }
 
 .slide-three {
-  background: url(images/foto-one1.jpg);
-  background-repeat: no-repeat;
+  background: url(images/screen1-b.jpg) no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.slide-three:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/screen1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slide-small-box.red {
@@ -908,6 +917,7 @@ a {
 
 .texture {
   background: url(images/texture.png);
+  width: 100%;
   height: 100%;
 }
 
@@ -997,10 +1007,20 @@ a {
 }
 
 .slide-four {
-  background: url(images/foto-two.jpg);
-  background-repeat: no-repeat;
+  background: url(images/screen2-b.jpg) no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.slide-four:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/screen2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slide-small-box.yellow {
@@ -1008,19 +1028,51 @@ a {
 }
 
 .slide-five {
-  background: url(images/foto-three.jpg);
-  background-repeat: no-repeat;
+  background: url(images/screen3-b.jpg) no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.slide-five:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/screen3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slide-small-box.blue {
   background: #263c68;
 }
 
+.slide-new {
+  background: url(images/screen1-b.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.slide-new:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/screen4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slide-small-box.blue-blue {
+  background: #1da7b3;
+}
+
 .slide-three:after,
 .slide-four:after,
-.slide-five:after {
+.slide-five:after,
+.slide-new:after {
   content: '';
   height: 100px;
   width: 100%;
@@ -1043,7 +1095,7 @@ a {
 .slide-long__text {
   font-family: nexa_boldregular, Arial, sans-serif;
   font-size: 4rem;
-  width: 58.333333333333336%;
+  width: 41.66666666666667%;
   margin: 0 auto;
 }
 
@@ -1161,8 +1213,20 @@ a {
   background-image: url('images/triangle-blue.png');
 }
 
+.blue-blue .triangle {
+  background: #1da7b3;
+}
+
+.blue-blue .triangle:after {
+  background-image: url('images/triangle-blue-blue.png');
+}
+
 .blue.slide-small-box:before {
   background: #263c68;
+}
+
+.blue-blue.slide-small-box:before {
+  background: #1da7b3;
 }
 
 .slide-six .subslide__take_action,
@@ -1215,7 +1279,7 @@ a {
 .slide-six.show__form .subslide__take_action,
 .slide-six.show__pricing .subslide__take_action {
   /*margin-bottom:0;*/
-  top: -60px !important;
+  top: -80px !important;
 }
 
 .redlink {
@@ -1711,6 +1775,52 @@ span.add-hint:after {
   color: #fff;
 }
 
+@media (max-width: 1330px) {
+  .table__cell-one {
+    padding: 13px;
+  }
+
+  .slide-six.show__form .subslide__take_action,
+  .slide-six.show__pricing .subslide__take_action {
+    top: -60px !important;
+  }
+
+  .slide-six.show__pricing .subslide__table {
+    margin-top: -40px;
+  }
+
+  .slide-six.show__form .subslide__form {
+    margin-top: -40px;
+  }
+
+  .slide-long__text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  .slide-six.show__form .subslide__take_action,
+  .slide-six.show__pricing .subslide__take_action {
+    top: -50px !important;
+  }
+
+  .table__cell-one {
+    padding: 5px;
+  }
+
+  .slide-six.show__pricing .subslide__table {
+    margin-top: -30px;
+  }
+
+  .slide-six.show__form .subslide__form {
+    margin-top: -30px;
+  }
+}
+
 @media (max-width: 1030px) {
   html {
     font-size: 55%;
@@ -1722,6 +1832,23 @@ span.add-hint:after {
 
   .slide-six .subslide__take_action {
     padding-top: 12rem;
+  }
+
+  .slide-six.show__form .subslide__take_action,
+  .slide-six.show__pricing .subslide__take_action {
+    top: -100px !important;
+  }
+
+  .table__cell-one {
+    padding: 5px;
+  }
+
+  .slide-six.show__pricing .subslide__table {
+    margin-top: -60px;
+  }
+
+  .slide-six.show__form .subslide__form {
+    margin-top: -60px;
   }
 }
 
@@ -1742,6 +1869,11 @@ span.add-hint:after {
 @media (max-width: 810px) {
   html {
     font-size: 45%;
+  }
+
+  .slide-six.show__form .subslide__take_action,
+  .slide-six.show__pricing .subslide__take_action {
+    top: -70px !important;
   }
 }
 
@@ -1856,6 +1988,10 @@ span.add-hint:after {
   .footer__social-icon img {
     width: 5rem;
   }
+
+  .text-art {
+    width: 250px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1895,6 +2031,11 @@ span.add-hint:after {
   .slide-long__btn {
     width: 30%;
   }
+
+  .slide-six.show__form .subslide__take_action,
+  .slide-six.show__pricing .subslide__take_action {
+    top: -50px !important;
+  }
 }
 
 @media (max-width: 490px) {
@@ -1929,6 +2070,10 @@ span.add-hint:after {
     height: 32px;
     background-position: center center;
   }
+
+  .text-art {
+    width: 170px;
+  }
 }
 
 /*
@@ -1951,13 +2096,13 @@ button:focus {
   background-position: -300px 0;
   background-repeat: no-repeat;
   border-radius: 20px;
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
 }
 
 .slide-small__link:hover {
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
   background-position: 0 0;
 }
 
@@ -2060,4 +2205,417 @@ button:focus {
 
 input[type="text"]:focus {
   text-shadow: 0 0 10px #fff;
+}
+
+@keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes counter-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+.gearbox {
+  width: 158px;
+  height: 155px;
+  position: relative;
+}
+
+.gear_small {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  background-color: transparent;
+  background-image: url(images/gear_small.gif);
+  background-repeat: no-repeat;
+  -webkit-animation: counter-clockwise 6s infinite linear;
+  animation: counter-clockwise 6s infinite linear;
+  /*-webkit-animation-delay: ;
+  -moz-animation-delay: ;
+  -o-animation-delay: ;
+  animation-delay: ;*/
+}
+
+.gear_middle {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-image: url(images/gear_middle.gif);
+  background-repeat: no-repeat;
+  -webkit-animation: clockwise 6s infinite linear;
+  animation: clockwise 6s infinite linear;
+}
+
+.gear_big {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: url(images/gear_big.gif);
+  background-repeat: no-repeat;
+  -webkit-animation: counter-clockwise 6s infinite linear;
+  animation: counter-clockwise 6s infinite linear;
+}
+
+.linechart_wrapper .linechart {
+  width: 155px;
+  height: 147px;
+  position: relative;
+}
+
+.linechart .bar {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: red;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.linechart .bar-1 {
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-1-bg.png);
+  background-position: left 20px;
+  background-repeat: no-repeat;
+  width: 0;
+}
+
+.linechart .bar-2 {
+  left: 52px;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-2-bg.png);
+  background-position: left 22px;
+  background-repeat: no-repeat;
+}
+
+.linechart .bar-3 {
+  left: 104px;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-3-bg.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.animate .linechart .bar-1 {
+  width: 52px;
+  -webkit-transition: width 0.3s linear;
+  border-bottom-left-radius: 12px;
+}
+
+.animate .linechart .bar-2 {
+  width: 52px;
+  -webkit-transition: width 0.3s linear 0.3s;
+}
+
+.animate .linechart .bar-3 {
+  width: 52px;
+  -webkit-transition: width 0.3s linear 0.6s;
+  border-bottom-right-radius: 12px;
+}
+
+.dot {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  opacity: 0;
+}
+
+.dot-1 {
+  top: 40px;
+  left: -1px;
+}
+
+.dot-2 {
+  top: 20px;
+  left: 50px;
+}
+
+.dot-3 {
+  top: 58px;
+  left: 101px;
+}
+
+.dot-4 {
+  top: 0px;
+  left: 154px;
+}
+
+.animate .linechart .dot {
+  opacity: 1;
+  -webkit-transition: all 0.125s ease-in;
+}
+
+.animate .linechart .dot-1 {
+  width: 14px;
+  height: 14px;
+  top: 35px;
+  left: -7px;
+}
+
+.animate .linechart .dot-2 {
+  width: 22px;
+  height: 22px;
+  top: 10px;
+  left: 41px;
+  -webkit-transition-delay: 0.25s;
+}
+
+.animate .linechart .dot-3 {
+  width: 12px;
+  height: 12px;
+  top: 52px;
+  left: 97px;
+  -webkit-transition-delay: 0.55s;
+}
+
+.animate .linechart .dot-4 {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: 145px;
+  -webkit-transition-delay: 0.85s;
+}
+
+.magnifier {
+  margin-left: -40px;
+  width: 83px;
+  height: 83px;
+  background-color: transparent;
+  background-image: url(images/magnifier.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
+.animate .linechart .magnifier {
+  width: 83px;
+  height: 83px;
+  background-color: transparent;
+  background-image: url(images/magnifier.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  bottom: -1px;
+  left: 100%;
+  -webkit-transition: left 0.9s linear;
+}
+
+.iphone {
+  width: 125px;
+  height: 195px;
+  position: relative;
+}
+
+
+
+.iphone .screen {
+  width: 108px;
+  height: 177px;
+  background-color: transparent;
+  background-image: url(images/iphone_screen.gif);
+}
+
+.iphone .star {
+  position: absolute;
+  top: 72px;
+  width: 18px;
+  height: 16px;
+  background-color: transparernt;
+  background-image: url(images/iphone_star.png);
+  background-repeat: no-repeat;
+}
+
+.iphone .star-1,
+.iphone .star-2,
+.iphone .star-3,
+.iphone .star-4,
+.iphone .star-5 {
+  left: -1000px;
+  top: -1000px;
+  -webkit-transition: all 0.5s linear 1s;
+  opacity: 0;
+}
+
+.iphone .star-1 {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.animate .iphone .star-1,
+.animate .iphone .star-2,
+.animate .iphone .star-3,
+.animate .iphone .star-4,
+.animate .iphone .star-5 {
+  top: 72px;
+  opacity: 1;
+  -webkit-transition: all 0.25s linear;
+}
+
+.animate .iphone .star-1 {
+  left: 9px;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.animate .iphone .star-2 {
+  left: 27px;
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+
+.animate .iphone .star-3 {
+  left: 45px;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.animate .iphone .star-4 {
+  left: 63px;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.animate .iphone .star-5 {
+  left: 81px;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.medal {
+  width: 150px;
+  height: 186px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: url(images/iphone_medal.png);
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.animate .iphone .medal {
+  width: 58px;
+  height: 72px;
+  -webkit-transition: all 0.35s ease-in 1s;
+  transition: all 0.35s ease-in 1s;
+  opacity: 1;
+}
+
+.animated_blocks {
+  margin-top: 50px;
+  /*margin-right: 50px;
+  margin-left: 50px;*/
+  height: 260px;
+}
+
+.animated_blocks section {
+  float: left;
+  width: 33.33333%;
+  position: relative;
+  height: 260px;
+}
+
+.animated_blocks section .feature-title {
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.animated_blocks section .feature-title span {
+  display: inline;
+  position: relative;
+}
+
+.animated_blocks section .feature-title span:before {
+  content: attr(data-item);
+  position: absolute;
+  left: -50px;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  line-height: 38px;
+  text-align: center;
+  background-color: #113c75;
+  border-radius: 50%;
+}
+
+.animated_blocks section .gearbox,
+.animated_blocks section .linechart,
+.animated_blocks section .iphone {
+  margin: 0 auto;
+}
+
+.animated_blocks section .linechart {
+  top: 15px;
 }
