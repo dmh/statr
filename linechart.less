@@ -1,0 +1,150 @@
+.linechart_wrapper{
+}
+.linechart_wrapper .linechart{
+  width: 155px;
+  height: 147px;
+  position: relative;
+
+}
+
+.linechart .bar{
+  position: absolute;
+  //width: 52px;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: red;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+.linechart .bar-1{
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-1-bg.png);
+  background-position: left 20px;
+  background-repeat: no-repeat;
+  width: 0;
+}
+.linechart .bar-2{
+  left: 52px;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-2-bg.png);
+  background-position: left 22px;
+  background-repeat: no-repeat;
+}
+.linechart .bar-3{
+  left: 104px;
+  bottom: 0;
+  background-color: transparent;
+  background-image: url(images/lc-bar-3-bg.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+
+}
+.animate .linechart{
+  .bar-1{
+    width: 52px;
+    -webkit-transition: width 0.3s linear;
+    border-bottom-left-radius: 12px;
+  }
+  .bar-2{
+    width: 52px;
+    -webkit-transition: width 0.3s linear 0.3s;
+  }
+  .bar-3{
+    width: 52px;
+    -webkit-transition: width 0.3s linear 0.6s;
+    border-bottom-right-radius: 12px;
+  }
+}
+
+//dots
+.dot{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  opacity: 0;
+}
+.dot-1{
+  top: 40px;
+  left: -1px;
+}
+.dot-2{
+  top: 20px;
+  left: 50px;
+}
+.dot-3{
+  top: 58px;
+  left: 101px;
+}
+.dot-4{
+  top: 0px;
+  left: 154px;
+}
+.animate .linechart{
+  .dot{
+    opacity: 1;
+    -webkit-transition: all .125s ease-in;
+  }
+  .dot-1{
+    width: 14px;
+    height: 14px;
+    top: 35px;
+    left: -7px;
+  }
+  .dot-2{
+    width: 22px;
+    height: 22px;
+    top: 10px;
+    left: 41px;
+    -webkit-transition-delay: 0.25s;
+  }
+  .dot-3{
+    width: 12px;
+    height: 12px;
+    top: 52px;
+    left: 97px;
+    -webkit-transition-delay: 0.55s;
+  }
+  .dot-4{
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: 145px;
+    -webkit-transition-delay: 0.85s;
+  }
+}
+.magnifier{
+  margin-left: -40px;
+  width: 83px;
+  height: 83px;
+  background-color: transparent;
+  background-image: url(images/magnifier.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+.animate .linechart{
+  .magnifier{
+    width: 83px;
+    height: 83px;
+    background-color: transparent;
+    background-image: url(images/magnifier.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: absolute;
+    bottom: -1px;
+    left: 100%;
+    -webkit-transition: left 0.9s linear;
+  }
+
+}

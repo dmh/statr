@@ -211,6 +211,10 @@ function rock(){
                     window.location.hash = ccc;
                     pagg.find('a').css('background-color', '#ccc');
                     that.css('background-color', '#dd1036');
+
+                    if(window.location.hash === '#two'){
+                       $(".animated_blocks").addClass('animate');
+                    }
                     // return false;
                     // setTimeout (function(){
                         // stop = 0;

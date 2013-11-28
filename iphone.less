@@ -1,0 +1,120 @@
+.iphone_wrapper{
+}
+.iphone{
+  width: 125px;
+  height: 195px;
+  position: relative;
+}
+.iphone{
+  .screen{
+    width: 108px;
+    height: 177px;
+    background-color: transparent;
+    background-image: url(images/iphone_screen.gif);
+  }
+
+  .star{
+    position: absolute;
+    top: 72px;
+    //left: 9px;
+    width: 18px;
+    height: 16px;
+    background-color: transparernt;
+    background-image: url(images/iphone_star.png);
+    background-repeat: no-repeat;
+  }
+/*  .star-1{
+    left: 9px;
+  }
+  .star-2{
+    left: 27px;
+  }
+  .star-3{
+    left: 45px;
+  }
+  .star-4{
+    left: 63px;
+  }
+  .star-5{
+    left: 81px;
+  }*/
+}
+.iphone{
+  .star-1,
+  .star-2,
+  .star-3,
+  .star-4,
+  .star-5{
+    left: -1000px;
+    top: -1000px;
+    -webkit-transition: all 0.5s linear 1s;
+    opacity: 0;
+  }
+  .star-1{
+    //left: 9px;
+
+    -webkit-transition-delay: 1s;
+    -moz-transition-delay: 1s;
+    -ms-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
+  }
+}
+
+
+.animate .iphone{
+  .star-1,
+  .star-2,
+  .star-3,
+  .star-4,
+  .star-5{
+    top: 72px;
+    opacity: 1;
+    -webkit-transition: all 0.25s linear;
+  }
+  .star-1{
+    left: 9px;
+    transition-delay: 1s;
+  }
+  .star-2{
+    left: 27px;
+    transition-delay: 0.8s;
+  }
+  .star-3{
+    left: 45px;
+    transition-delay: 0.6s;}
+  .star-4{
+    left: 63px;
+    transition-delay: 0.4s;
+  }
+  .star-5{
+    left: 81px;
+    transition-delay: 0.2s;}
+}
+
+.medal{
+  width: 150px;
+  height: 186px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: url(images/iphone_medal.png);
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+}
+.animate .iphone{
+  .medal{
+    width: 58px;
+    height: 72px;
+    -webkit-transition: all 0.35s ease-in 1s;
+    -moz-transition: all 0.35s ease-in 1s;
+    -ms-transition: all 0.35s ease-in 1s;
+    -o-transition: all 0.35s ease-in 1s;
+    transition: all 0.35s ease-in 1s;
+    opacity: 1;
+  }
+}

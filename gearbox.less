@@ -1,0 +1,151 @@
+//  KeyFrames For Clockwise Rotation
+@keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+//  KeyFrames For Counter-Clockwise Rotation
+@keyframes counter-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes counter-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-moz-keyframes counter-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+
+.gearbox{
+  width: 158px;
+  height: 155px;
+  position: relative;
+}
+
+.gear_small{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  background-color: transparent;
+  background-image: url(images/gear_small.gif);
+  background-repeat: no-repeat;
+
+  //Animation
+  -webkit-animation: counter-clockwise 6s infinite linear;
+  -moz-animation: counter-clockwise 6s infinite linear;
+  animation: counter-clockwise 6s infinite linear;
+
+  /*-webkit-animation-delay: ;
+  -moz-animation-delay: ;
+  -o-animation-delay: ;
+  animation-delay: ;*/
+}
+.gear_middle{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-image: url(images/gear_middle.gif);
+  background-repeat: no-repeat;
+
+  //-webkit-animation: clockwise 6s infinite linear;
+  -webkit-animation: clockwise 6s infinite linear;
+  -moz-animation: clockwise 6s infinite linear;
+  animation: clockwise 6s infinite linear;
+}
+.gear_big{
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: url(images/gear_big.gif);
+  background-repeat: no-repeat;
+
+  -webkit-animation: counter-clockwise 6s infinite linear;
+  -moz-animation: counter-clockwise 6s infinite linear;
+  animation: counter-clockwise 6s infinite linear;
+}
+
+//Revealing Gearbox
