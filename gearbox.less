@@ -91,12 +91,21 @@
   }
 }
 
-
+.gears{
+  opacity: 0;
+}
+.animate .gears{
+  opacity: 1;
+  transition: opacity 0.25s linear;
+  transition-delay: 0.25s;
+}
 .gearbox{
   width: 158px;
   height: 155px;
   position: relative;
+  //opacity: 0;
 }
+
 
 .gear_small{
   width: 60px;
@@ -107,16 +116,6 @@
   background-color: transparent;
   background-image: url(images/gear_small.gif);
   background-repeat: no-repeat;
-
-  //Animation
-  -webkit-animation: counter-clockwise 6s infinite linear;
-  -moz-animation: counter-clockwise 6s infinite linear;
-  animation: counter-clockwise 6s infinite linear;
-
-  /*-webkit-animation-delay: ;
-  -moz-animation-delay: ;
-  -o-animation-delay: ;
-  animation-delay: ;*/
 }
 .gear_middle{
   width: 90px;
@@ -127,11 +126,6 @@
   background-color: transparent;
   background-image: url(images/gear_middle.gif);
   background-repeat: no-repeat;
-
-  //-webkit-animation: clockwise 6s infinite linear;
-  -webkit-animation: clockwise 6s infinite linear;
-  -moz-animation: clockwise 6s infinite linear;
-  animation: clockwise 6s infinite linear;
 }
 .gear_big{
   width: 96px;
@@ -142,10 +136,31 @@
   background-color: transparent;
   background-image: url(images/gear_big.gif);
   background-repeat: no-repeat;
-
-  -webkit-animation: counter-clockwise 6s infinite linear;
-  -moz-animation: counter-clockwise 6s infinite linear;
-  animation: counter-clockwise 6s infinite linear;
 }
 
 //Revealing Gearbox
+.animate{
+  .gear_small{
+    -webkit-animation: counter-clockwise 3s 1.5s linear;
+    -moz-animation: counter-clockwise 3s 1.5s linear;
+    animation: counter-clockwise 3s 1.5s linear;
+  }
+  .gear_middle{
+    -webkit-animation: clockwise 3s 1.5s linear;
+    -moz-animation: clockwise 3s 1.5s linear;
+    animation: clockwise 3s 1.5s linear;
+  }
+  .gear_big{
+    -webkit-animation: counter-clockwise 3s 1.5s linear;
+    -moz-animation: counter-clockwise 3s 1.5s linear;
+    animation: counter-clockwise 3s 1.5s linear;
+  }
+  .gear_small,
+  .gear_middle,
+  .gear_big{
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+}

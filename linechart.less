@@ -1,5 +1,12 @@
-.linechart_wrapper{
-}
+///Animation Variables For Line Chart:
+@lineChartTransitionDelay:      3.5s;
+@lineChartBarAnimationParam:    width;
+@lineChartBarAnimationDuration: 0.3s;
+@lineChartBarAnimationDelta:    0.3s;
+@lineChartTimingFx:             linear;
+
+
+
 .linechart_wrapper .linechart{
   width: 155px;
   height: 147px;
@@ -15,8 +22,6 @@
   top: 0;
   left: 0;
   background-color: red;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 
 }
@@ -47,18 +52,21 @@
 
 }
 .animate .linechart{
+  .bar{
+    transition: @lineChartBarAnimationParam @lineChartBarAnimationDuration @lineChartTimingFx;
+  }
   .bar-1{
     width: 52px;
-    -webkit-transition: width 0.3s linear;
     border-bottom-left-radius: 12px;
+    transition-delay: @lineChartTransitionDelay;
   }
   .bar-2{
     width: 52px;
-    -webkit-transition: width 0.3s linear 0.3s;
+    transition-delay: @lineChartTransitionDelay + @lineChartBarAnimationDelta;
   }
   .bar-3{
     width: 52px;
-    -webkit-transition: width 0.3s linear 0.6s;
+    transition-delay: @lineChartTransitionDelay + @lineChartBarAnimationDelta*2;
     border-bottom-right-radius: 12px;
   }
 }
@@ -91,34 +99,35 @@
 .animate .linechart{
   .dot{
     opacity: 1;
-    -webkit-transition: all .125s ease-in;
+    transition: all .125s ease-in;
   }
   .dot-1{
     width: 14px;
     height: 14px;
     top: 35px;
     left: -7px;
+    transition-delay: @lineChartTransitionDelay;
   }
   .dot-2{
     width: 22px;
     height: 22px;
     top: 10px;
     left: 41px;
-    -webkit-transition-delay: 0.25s;
+    transition-delay: @lineChartTransitionDelay + @lineChartBarAnimationDelta;
   }
   .dot-3{
     width: 12px;
     height: 12px;
     top: 52px;
     left: 97px;
-    -webkit-transition-delay: 0.55s;
+    transition-delay: @lineChartTransitionDelay + @lineChartBarAnimationDelta*2;
   }
   .dot-4{
     width: 20px;
     height: 20px;
     top: -10px;
     left: 145px;
-    -webkit-transition-delay: 0.85s;
+    transition-delay: @lineChartTransitionDelay + @lineChartBarAnimationDelta*3;
   }
 }
 .magnifier{
@@ -132,6 +141,7 @@
   position: absolute;
   bottom: -1px;
   left: 0;
+  opacity: 0;
 }
 .animate .linechart{
   .magnifier{
@@ -144,7 +154,18 @@
     position: absolute;
     bottom: -1px;
     left: 100%;
-    -webkit-transition: left 0.9s linear;
+    opacity: 1;
+    transition: left 0.9s linear, opacity 0.1s linear;
+    transition-delay: @lineChartTransitionDelay;
   }
+}
 
+//Animate Feature Title
+.linecharts .feature-title{
+  opacity: 0;
+}
+.animate .linecharts .feature-title{
+  opacity: 1;
+  transition: opacity 0.25s linear;
+  transition-delay: @lineChartTransitionDelay;
 }
