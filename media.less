@@ -114,9 +114,12 @@ top: -70px !important;
 .header{
     // overflow: hidden;
     // position: relative;
+    background: #111;
+    padding-top: 14px;
 }
 .logo{
     // max-height: 40px;
+    padding-left: 10px;
 }
 .main-nav{
     // position: fixed;
@@ -132,7 +135,7 @@ top: -70px !important;
     // display: block;
     opacity: 0;
     visibility: hidden;
-    transition: .5s;
+    transition: .2s;
     // z-index: -4;
 }
 .mob-menu{
@@ -148,7 +151,8 @@ top: -70px !important;
     top: 4px;
     right: 4px;
     display: block;
-    transition: .5s;
+    cursor: pointer;
+    transition: .2s;
 }
 .mob-act{
     color: #555;
@@ -244,6 +248,66 @@ float: none;
 .text-art {
 width: 250px;
 }
+
+.slide-four:before, .slide-five:before, .slide-new:before, .slide-three:before {
+//content: '';
+//display: block;
+//position: absolute;
+left: 8%;
+top: 10%;
+width: 84%;
+height: 30%;
+//background-image: url(images/screen2.jpg);
+//background-repeat: no-repeat;
+//background-position: center;
+background-size: contain;
+}
+.foto__text {
+top: -396px;
+font-size: 18px;
+//text-align: center;
+}
+.slide-long__link:nth-child(3) {
+//padding-right: 10px;
+padding-top: 20px;
+padding-bottom: 20px;
+//text-decoration: underline;
+//display: inline-block;
+//color: #00abf0;
+}
+.slide-small__link {
+//font-family: nexa_boldregular, Arial, sans-serif;
+//display: inline-block;
+font-size: 14px;
+padding: 7px 0;
+margin-right: 2px;
+//position: relative;
+border: 2px solid #fff;
+//border-radius: 28px;
+//margin-bottom: 30px;
+}
+.separator{
+    display: none !important;
+}
+.slide-small__link:before {
+content: '';
+//position: absolute;
+//top: 7px;
+//left: 17px;
+//line-height: 1;
+font-size: 0px;
+}
+.slide-small__link span {
+padding-left: 25px;
+//padding-right: 25px;
+}
+#login {
+overflow: scroll;
+}
+.login__background {
+display: none;
+}
+
 }
 @media (max-width: 650px) {
     html{
@@ -274,10 +338,13 @@ font-size: 4rem;
     width: 60%;
 }
 .slide-long__btn {
-    width: 30%;
+    width: 50%;
 }
 .slide-six.show__form .subslide__take_action, .slide-six.show__pricing .subslide__take_action {
 top: -50px !important;
+}
+.slide-long__input {
+width: 70%;
 }
 
 }
