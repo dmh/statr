@@ -1,5 +1,7 @@
-.iphone_wrapper{
-}
+//Iphone Animation Variables:
+@iPstarAnimDuration:        0.25s;
+@iPAnimDelay:               4.75s;
+@iPstarAnimDelta:           0.2s;
 .iphone{
   width: 125px;
   height: 195px;
@@ -23,23 +25,10 @@
     background-image: url(images/iphone_star.png);
     background-repeat: no-repeat;
   }
-/*  .star-1{
-    left: 9px;
-  }
-  .star-2{
-    left: 27px;
-  }
-  .star-3{
-    left: 45px;
-  }
-  .star-4{
-    left: 63px;
-  }
-  .star-5{
-    left: 81px;
-  }*/
 }
+
 .iphone{
+  opacity: 0;
   .star-1,
   .star-2,
   .star-3,
@@ -47,22 +36,16 @@
   .star-5{
     left: -1000px;
     top: -1000px;
-    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
     opacity: 0;
-  }
-  .star-1{
-    //left: 9px;
-
-    -webkit-transition-delay: 1s;
-    -moz-transition-delay: 1s;
-    -ms-transition-delay: 1s;
-    -o-transition-delay: 1s;
-    transition-delay: 1s;
   }
 }
 
 
 .animate .iphone{
+  opacity: 1;
+  transition: opacity 0.1s linear 1s;
+  transition-delay:   @iPAnimDelay;
   .star-1,
   .star-2,
   .star-3,
@@ -74,22 +57,24 @@
   }
   .star-1{
     left: 9px;
-    transition-delay: 1s;
+    transition-delay: @iPAnimDelay + @iPstarAnimDelta*5;
   }
   .star-2{
     left: 27px;
-    transition-delay: 0.8s;
+    transition-delay: @iPAnimDelay + @iPstarAnimDelta*4;
   }
   .star-3{
     left: 45px;
-    transition-delay: 0.6s;}
+    transition-delay: @iPAnimDelay + @iPstarAnimDelta*3;}
   .star-4{
     left: 63px;
-    transition-delay: 0.4s;
+    transition-delay: @iPAnimDelay + @iPstarAnimDelta*2;
   }
   .star-5{
     left: 81px;
-    transition-delay: 0.2s;}
+    transition-delay: @iPAnimDelay + @iPstarAnimDelta;
+
+  }
 }
 
 .medal{
@@ -118,3 +103,14 @@
     opacity: 1;
   }
 }
+<<<<<<< HEAD
+=======
+.iphones .feature-title{
+  opacity: 0;
+}
+.animate .iphones .feature-title{
+  opacity: 1;
+  transition: opacity 0.25s linear;
+  transition-delay: @iPAnimDelay;
+}
+>>>>>>> 9bd97d09137b85d8c68d471a6542075f54c8d5a2
