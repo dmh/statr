@@ -760,8 +760,8 @@ a {
 }
 
 .all-slides {
-  -webkit-transition: -webkit-transform .5s;
-  transition: transform .5s;
+  -webkit-transition: -webkit-transform .4s;
+  transition: transform .4s;
 }
 
 .slide-height {
@@ -883,6 +883,7 @@ a {
 .black__text {
   width: 50%;
   margin: 0 auto;
+  width: auto;
   font-size: 7rem;
   font-family: nexa_boldregular, 'sans serif';
 }
@@ -998,12 +999,19 @@ a {
 }
 
 .slide-small__link + .separator {
+  display: inline-block;
+  vertical-align: top;
+  height: 51px;
+  line-height: 51px;
   padding: 0 15px;
+  font-family: nexa_boldregular, Arial, sans-serif;
+  font-size: 18px;
+  /*  padding: 0 15px;
   font-family: nexa_boldregular, Arial, sans-serif;
   display: inline-block;
   font-size: 18px;
-  position: relative;
-  top: -50px;
+  line-height: 18px;
+  position: relative;*/
 }
 
 .slide-four {
@@ -1081,7 +1089,7 @@ a {
   left: 0;
   bottom: 0;
   height: 50%;
-  background: -webkit-gradient(linear, top left, bottom left, from(rgba(255, 255, 255, 0)), to(#000000));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#000000));
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #000000 100%);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000000 100%);
 }
@@ -1227,6 +1235,18 @@ a {
 
 .blue-blue.slide-small-box:before {
   background: #1da7b3;
+}
+
+.slide-four:before,
+.slide-five:before,
+.slide-new:before,
+.slide-three:before {
+  left: 10%;
+  top: 14%;
+  width: 80%;
+  height: 60%;
+  -webkit-background-size: contain;
+  background-size: contain;
 }
 
 .slide-six .subslide__take_action,
@@ -1798,7 +1818,7 @@ span.add-hint:after {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-height: 844px) {
   html {
     font-size: 55%;
   }
@@ -1824,10 +1844,6 @@ span.add-hint:after {
 @media (max-width: 1030px) {
   html {
     font-size: 55%;
-  }
-
-  .foto__text {
-    top: -170px;
   }
 
   .slide-six .subslide__take_action {
@@ -1871,6 +1887,10 @@ span.add-hint:after {
     font-size: 45%;
   }
 
+  .main-nav__item {
+    font-size: 1.8rem;
+  }
+
   .slide-six.show__form .subslide__take_action,
   .slide-six.show__pricing .subslide__take_action {
     top: -70px !important;
@@ -1887,6 +1907,15 @@ span.add-hint:after {
     display: none;
   }
 
+  .header {
+    background: #111;
+    padding-top: 14px;
+  }
+
+  .logo {
+    padding-left: 10px;
+  }
+
   .main-nav {
     width: 80%;
     top: 20px !important;
@@ -1896,8 +1925,8 @@ span.add-hint:after {
     border-radius: 18px;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition: .1s;
+    transition: .1s;
   }
 
   .mob-menu {
@@ -1911,8 +1940,9 @@ span.add-hint:after {
     top: 4px;
     right: 4px;
     display: block;
-    -webkit-transition: .5s;
-    transition: .5s;
+    cursor: pointer;
+    -webkit-transition: .1s;
+    transition: .1s;
   }
 
   .mob-act {
@@ -1957,7 +1987,6 @@ span.add-hint:after {
   }
 
   .foto__text {
-    top: -440px;
     font-size: 22px;
     text-align: center;
   }
@@ -1991,6 +2020,55 @@ span.add-hint:after {
 
   .text-art {
     width: 250px;
+  }
+
+  .slide-four:before,
+  .slide-five:before,
+  .slide-new:before,
+  .slide-three:before {
+    left: 8%;
+    top: 10%;
+    width: 84%;
+    height: 30%;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+
+  .foto__text {
+    font-size: 18px;
+  }
+
+  .slide-long__link:nth-child(3) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .slide-small__link {
+    font-size: 14px;
+    padding: 7px 0;
+    margin-right: 2px;
+    border: 2px solid #fff;
+  }
+
+  .separator {
+    display: none !important;
+  }
+
+  .slide-small__link:before {
+    content: '';
+    font-size: 0px;
+  }
+
+  .slide-small__link span {
+    padding-left: 25px;
+  }
+
+  #login {
+    overflow: scroll;
+  }
+
+  .login__background {
+    display: none;
   }
 }
 
@@ -2029,12 +2107,16 @@ span.add-hint:after {
   }
 
   .slide-long__btn {
-    width: 30%;
+    width: 50%;
   }
 
   .slide-six.show__form .subslide__take_action,
   .slide-six.show__pricing .subslide__take_action {
     top: -50px !important;
+  }
+
+  .slide-long__input {
+    width: 70%;
   }
 }
 
@@ -2127,16 +2209,16 @@ button:focus {
   background-image: url(images/buttons-overlay.png);
   background-position: -300px 0;
   background-repeat: no-repeat;
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
 }
 
 .slide-long__link:nth-child(2):hover,
 .slide-long__btn:hover,
 .login__social-block .login__social-link:hover,
 .login__sign-in:hover {
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
   background-position: 0px 0;
 }
 
@@ -2183,13 +2265,13 @@ button:focus {
 .table__footer-link {
   border-radius: 18px;
   background: #d71036 url(images/buttons-overlay-lred-small.png) -300px 0 no-repeat;
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
 }
 
 .table__footer-link:hover {
-  -webkit-transition: background-position linear 0.75s;
-  transition: background-position linear 0.75s;
+  -webkit-transition: background-position linear 0.25s;
+  transition: background-position linear 0.25s;
   background-position: 0px 0;
 }
 
@@ -2263,6 +2345,18 @@ input[type="text"]:focus {
   }
 }
 
+.gears {
+  opacity: 0;
+}
+
+.animate .gears {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
 .gearbox {
   width: 158px;
   height: 155px;
@@ -2278,12 +2372,6 @@ input[type="text"]:focus {
   background-color: transparent;
   background-image: url(images/gear_small.gif);
   background-repeat: no-repeat;
-  -webkit-animation: counter-clockwise 6s infinite linear;
-  animation: counter-clockwise 6s infinite linear;
-  /*-webkit-animation-delay: ;
-  -moz-animation-delay: ;
-  -o-animation-delay: ;
-  animation-delay: ;*/
 }
 
 .gear_middle {
@@ -2295,8 +2383,6 @@ input[type="text"]:focus {
   background-color: transparent;
   background-image: url(images/gear_middle.gif);
   background-repeat: no-repeat;
-  -webkit-animation: clockwise 6s infinite linear;
-  animation: clockwise 6s infinite linear;
 }
 
 .gear_big {
@@ -2308,8 +2394,28 @@ input[type="text"]:focus {
   background-color: transparent;
   background-image: url(images/gear_big.gif);
   background-repeat: no-repeat;
-  -webkit-animation: counter-clockwise 6s infinite linear;
-  animation: counter-clockwise 6s infinite linear;
+}
+
+.animate .gear_small {
+  -webkit-animation: counter-clockwise 3s 1.5s linear;
+  animation: counter-clockwise 3s 1.5s linear;
+}
+
+.animate .gear_middle {
+  -webkit-animation: clockwise 3s 1.5s linear;
+  animation: clockwise 3s 1.5s linear;
+}
+
+.animate .gear_big {
+  -webkit-animation: counter-clockwise 3s 1.5s linear;
+  animation: counter-clockwise 3s 1.5s linear;
+}
+
+.animate .gear_small,
+.animate .gear_middle,
+.animate .gear_big {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 .linechart_wrapper .linechart {
@@ -2358,20 +2464,28 @@ input[type="text"]:focus {
   background-repeat: no-repeat;
 }
 
+.animate .linechart .bar {
+  -webkit-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+
 .animate .linechart .bar-1 {
   width: 52px;
-  -webkit-transition: width 0.3s linear;
   border-bottom-left-radius: 12px;
+  -webkit-transition-delay: 3.5s;
+  transition-delay: 3.5s;
 }
 
 .animate .linechart .bar-2 {
   width: 52px;
-  -webkit-transition: width 0.3s linear 0.3s;
+  -webkit-transition-delay: 3.8s;
+  transition-delay: 3.8s;
 }
 
 .animate .linechart .bar-3 {
   width: 52px;
-  -webkit-transition: width 0.3s linear 0.6s;
+  -webkit-transition-delay: 4.1s;
+  transition-delay: 4.1s;
   border-bottom-right-radius: 12px;
 }
 
@@ -2407,6 +2521,7 @@ input[type="text"]:focus {
 .animate .linechart .dot {
   opacity: 1;
   -webkit-transition: all 0.125s ease-in;
+  transition: all 0.125s ease-in;
 }
 
 .animate .linechart .dot-1 {
@@ -2414,6 +2529,8 @@ input[type="text"]:focus {
   height: 14px;
   top: 35px;
   left: -7px;
+  -webkit-transition-delay: 3.5s;
+  transition-delay: 3.5s;
 }
 
 .animate .linechart .dot-2 {
@@ -2421,7 +2538,8 @@ input[type="text"]:focus {
   height: 22px;
   top: 10px;
   left: 41px;
-  -webkit-transition-delay: 0.25s;
+  -webkit-transition-delay: 3.8s;
+  transition-delay: 3.8s;
 }
 
 .animate .linechart .dot-3 {
@@ -2429,7 +2547,8 @@ input[type="text"]:focus {
   height: 12px;
   top: 52px;
   left: 97px;
-  -webkit-transition-delay: 0.55s;
+  -webkit-transition-delay: 4.1s;
+  transition-delay: 4.1s;
 }
 
 .animate .linechart .dot-4 {
@@ -2437,7 +2556,8 @@ input[type="text"]:focus {
   height: 20px;
   top: -10px;
   left: 145px;
-  -webkit-transition-delay: 0.85s;
+  -webkit-transition-delay: 4.4s;
+  transition-delay: 4.4s;
 }
 
 .magnifier {
@@ -2451,6 +2571,7 @@ input[type="text"]:focus {
   position: absolute;
   bottom: -1px;
   left: 0;
+  opacity: 0;
 }
 
 .animate .linechart .magnifier {
@@ -2463,7 +2584,23 @@ input[type="text"]:focus {
   position: absolute;
   bottom: -1px;
   left: 100%;
-  -webkit-transition: left 0.9s linear;
+  opacity: 1;
+  -webkit-transition: left 0.9s linear, opacity 0.1s linear;
+  transition: left 0.9s linear, opacity 0.1s linear;
+  -webkit-transition-delay: 3.5s;
+  transition-delay: 3.5s;
+}
+
+.linecharts .feature-title {
+  opacity: 0;
+}
+
+.animate .linecharts .feature-title {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+  -webkit-transition-delay: 3.5s;
+  transition-delay: 3.5s;
 }
 
 .iphone {
@@ -2471,8 +2608,6 @@ input[type="text"]:focus {
   height: 195px;
   position: relative;
 }
-
-
 
 .iphone .screen {
   width: 108px;
@@ -2491,6 +2626,10 @@ input[type="text"]:focus {
   background-repeat: no-repeat;
 }
 
+.iphone {
+  opacity: 0;
+}
+
 .iphone .star-1,
 .iphone .star-2,
 .iphone .star-3,
@@ -2499,12 +2638,16 @@ input[type="text"]:focus {
   left: -1000px;
   top: -1000px;
   -webkit-transition: all 0.5s linear 1s;
+  transition: all 0.5s linear 1s;
   opacity: 0;
 }
 
-.iphone .star-1 {
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
+.animate .iphone {
+  opacity: 1;
+  -webkit-transition: opacity 0.1s linear 1s;
+  transition: opacity 0.1s linear 1s;
+  -webkit-transition-delay: 4.75s;
+  transition-delay: 4.75s;
 }
 
 .animate .iphone .star-1,
@@ -2519,32 +2662,32 @@ input[type="text"]:focus {
 
 .animate .iphone .star-1 {
   left: 9px;
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
+  -webkit-transition-delay: 5.75s;
+  transition-delay: 5.75s;
 }
 
 .animate .iphone .star-2 {
   left: 27px;
-  -webkit-transition-delay: 0.8s;
-  transition-delay: 0.8s;
+  -webkit-transition-delay: 5.55s;
+  transition-delay: 5.55s;
 }
 
 .animate .iphone .star-3 {
   left: 45px;
-  -webkit-transition-delay: 0.6s;
-  transition-delay: 0.6s;
+  -webkit-transition-delay: 5.35s;
+  transition-delay: 5.35s;
 }
 
 .animate .iphone .star-4 {
   left: 63px;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-transition-delay: 5.15s;
+  transition-delay: 5.15s;
 }
 
 .animate .iphone .star-5 {
   left: 81px;
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 4.95s;
+  transition-delay: 4.95s;
 }
 
 .medal {
@@ -2567,6 +2710,18 @@ input[type="text"]:focus {
   -webkit-transition: all 0.35s ease-in 1s;
   transition: all 0.35s ease-in 1s;
   opacity: 1;
+}
+
+.iphones .feature-title {
+  opacity: 0;
+}
+
+.animate .iphones .feature-title {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+  -webkit-transition-delay: 4.75s;
+  transition-delay: 4.75s;
 }
 
 .animated_blocks {
@@ -2618,4 +2773,119 @@ input[type="text"]:focus {
 
 .animated_blocks section .linechart {
   top: 15px;
+}
+
+@media (max-width: 700px) {
+  #two {
+    height: auto!important;
+  }
+
+  .animated_blocks {
+    margin: 0;
+    height: auto;
+  }
+
+  .animated_blocks section .feature-title {
+    opacity: 1;
+  }
+
+  .animated_blocks section {
+    margin: 0 0 30px;
+    padding-bottom: 70px;
+    height: 230px;
+    float: none;
+    width: 100%;
+    opacity: 1;
+  }
+
+  .linechart .bar {
+    width: 52px;
+  }
+
+  .linechart .bar-1 {
+    border-bottom-left-radius: 12px;
+  }
+
+  .linechart .bar-3 {
+    border-bottom-right-radius: 12px;
+  }
+
+  .linechart .dot {
+    opacity: 1;
+  }
+
+  .linechart .dot-1 {
+    width: 14px;
+    height: 14px;
+    top: 35px;
+    left: -7px;
+  }
+
+  .linechart .dot-2 {
+    width: 22px;
+    height: 22px;
+    top: 10px;
+    left: 41px;
+  }
+
+  .linechart .dot-3 {
+    width: 12px;
+    height: 12px;
+    top: 52px;
+    left: 97px;
+  }
+
+  .linechart .dot-4 {
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: 145px;
+  }
+
+  .linechart .magnifier {
+    opacity: 1;
+  }
+
+  .linecharts .feature-title {
+    opacity: 1;
+  }
+
+  .iphone {
+    opacity: 1;
+  }
+
+  .iphone .star-1,
+  .iphone .star-2,
+  .iphone .star-3,
+  .iphone .star-4,
+  .iphone .star-5 {
+    top: 72px;
+    opacity: 1;
+  }
+
+  .iphone .star-1 {
+    left: 9px;
+  }
+
+  .iphone .star-2 {
+    left: 27px;
+  }
+
+  .iphone .star-3 {
+    left: 45px;
+  }
+
+  .iphone .star-4 {
+    left: 63px;
+  }
+
+  .iphone .star-5 {
+    left: 81px;
+  }
+
+  .iphone .medal {
+    width: 58px;
+    height: 72px;
+    opacity: 1;
+  }
 }
