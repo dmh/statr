@@ -301,22 +301,38 @@ window.innerWidth > 700 &&   rock();
 }());
 
 
-//=========resize page height==========
-;(function(){
-    var aaa = window.innerHeight;
-    var ccc = $('.slide-height');
-    window.innerWidth > 700 && ccc.css('height', aaa);
-    window.innerWidth < 700 && ccc.css('height', 600);
-    window.innerWidth < 700 && $('#seven').css({'height':'auto', 'padding-bottom':'110px' });
-    window.innerWidth > 700 && (function (){
-    $(window).smartresize(function(){
-        ccc.css('height', window.innerHeight);
-        var ar = ['#one', '#two', '#three', '#four', '#five', '#six', '#seven'];
-        var plpl = window.innerHeight * ar.indexOf(window.location.hash)
-        var lkj = 'translateY(-'+ plpl + 'px)';
-        $('.all-slides').css({'transform': lkj});
-    });
-    }());
+//=========resize page height
+ ;(function(){
+      var aaa = window.innerHeight;
+      var ccc = $('.slide-height');
+      window.innerWidth > 700 && ccc.css('height', aaa);
+      window.innerWidth < 700 && ccc.css('height', 600);
+      window.innerWidth < 700 && $('#seven').css({'height':'auto', 'padding-bottom':'110px' });
+      // ccc.css('height', aaa);
+      window.innerWidth > 700 && (function (){
+      $(window).smartresize(function(){
+          ccc.css('height', window.innerHeight);
+          var ar = ['#one', '#two', '#three', '#four', '#five', '#six', '#seven'];
+          $(this).scrollTop(window.innerHeight * ar.indexOf(window.location.hash));
+      });
+      }());
+
+
+// ;(function(){
+//     var aaa = window.innerHeight;
+//     var ccc = $('.slide-height');
+//     window.innerWidth > 700 && ccc.css('height', aaa);
+//     window.innerWidth < 700 && ccc.css('height', 600);
+//     window.innerWidth < 700 && $('#seven').css({'height':'auto', 'padding-bottom':'110px' });
+//     window.innerWidth > 700 && (function (){
+//     $(window).smartresize(function(){
+//         ccc.css('height', window.innerHeight);
+//         var ar = ['#one', '#two', '#three', '#four', '#five', '#six', '#seven'];
+//         var plpl = window.innerHeight * ar.indexOf(window.location.hash)
+//         var lkj = 'translateY(-'+ plpl + 'px)';
+//         $('.all-slides').css({'transform': lkj});
+//     });
+//     }());
 
 }());
 
