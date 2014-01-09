@@ -618,8 +618,8 @@ a {
 .header .main-nav {
   position: relative;
   top: 0;
-  -webkit-transition: all 0.75s ease-in-out;
-  transition: all 0.75s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .header.fixed {
@@ -942,6 +942,7 @@ a {
   margin: 0 auto;
   padding-top: 5rem;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
 .slide-small__text:nth-child(3) {
@@ -1814,7 +1815,8 @@ span.add-hint:after {
   }
 
   .slide-long__text {
-    font-size: 3rem;
+    width: 90%;
+    font-size: 6rem;
   }
 }
 
@@ -1844,6 +1846,10 @@ span.add-hint:after {
 @media (max-width: 1030px) {
   html {
     font-size: 55%;
+  }
+
+  .foto__text {
+    top: -170px;
   }
 
   .slide-six .subslide__take_action {
@@ -1914,6 +1920,7 @@ span.add-hint:after {
 
   .logo {
     padding-left: 10px;
+    padding-top: 5px;
   }
 
   .main-nav {
@@ -1927,6 +1934,7 @@ span.add-hint:after {
     visibility: hidden;
     -webkit-transition: .1s;
     transition: .1s;
+    overflow: hidden;
   }
 
   .mob-menu {
@@ -1943,6 +1951,7 @@ span.add-hint:after {
     cursor: pointer;
     -webkit-transition: .1s;
     transition: .1s;
+    background: transparent url("images/context-menu-icon.png") center 20px no-repeat;
   }
 
   .mob-act {
@@ -1957,12 +1966,20 @@ span.add-hint:after {
 
   .main-nav .main-nav__item {
     display: block;
-    margin: 5px 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 15px;
     font-size: 22px;
     border-radius: 0;
     border: none;
     border-bottom: 1px solid #222;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+
+  .main-nav .main-nav__item:active,
+  .main-nav .main-nav__item.active,
+  .main-nav .main-nav__item:hover {
+    background-color: #dd1036;
   }
 
   .main-nav .main-nav__item:nth-child(4) {
@@ -1987,6 +2004,7 @@ span.add-hint:after {
   }
 
   .foto__text {
+    top: -440px;
     font-size: 22px;
     text-align: center;
   }
@@ -2032,9 +2050,18 @@ span.add-hint:after {
     height: 30%;
     -webkit-background-size: contain;
     background-size: contain;
+    z-index: 10;
+  }
+
+  .slide-three:after,
+  .slide-four:after,
+  .slide-five:after,
+  .slide-new:after {
+    height: 80%;
   }
 
   .foto__text {
+    top: -420px;
     font-size: 18px;
   }
 
@@ -2044,9 +2071,10 @@ span.add-hint:after {
   }
 
   .slide-small__link {
+    white-space: nowrap;
     font-size: 14px;
     padding: 7px 0;
-    margin-right: 2px;
+    margin: 0px 5px 40px;
     border: 2px solid #fff;
   }
 
@@ -2063,12 +2091,46 @@ span.add-hint:after {
     padding-left: 25px;
   }
 
+  .slide-long__link {
+    white-space: nowrap;
+  }
+
   #login {
     overflow: scroll;
   }
 
   .login__background {
     display: none;
+  }
+
+  .slide-two .text {
+    padding-top: 50px;
+  }
+
+  .black__text__secondary {
+    margin-bottom: 40px;
+    line-height: 40px;
+    font-size: 6em;
+  }
+
+  .animated_blocks section.gears {
+    height: 200px;
+    margin-bottom: 60px;
+  }
+
+  .animated_blocks section.linecharts {
+    margin-bottom: 70px;
+  }
+
+  .animated_blocks section.iphones {
+    height: 250px;
+    margin-bottom: 80px;
+  }
+
+  .foto__text {
+    padding-right: 5%;
+    padding-left: 5%;
+    font-size: 5rem;
   }
 }
 
@@ -2145,12 +2207,16 @@ span.add-hint:after {
   }
 
   .login__close {
-    top: -36px;
-    right: 0;
-    background-color: #000;
+    top: 24px;
+    right: 20px;
+    background-color: transparent;
     width: 36px;
     height: 32px;
     background-position: center center;
+  }
+
+  .login__close:active {
+    background-color: transparent;
   }
 
   .text-art {
@@ -2267,6 +2333,7 @@ button:focus {
   background: #d71036 url(images/buttons-overlay-lred-small.png) -300px 0 no-repeat;
   -webkit-transition: background-position linear 0.25s;
   transition: background-position linear 0.25s;
+  white-space: nowrap;
 }
 
 .table__footer-link:hover {
@@ -2787,6 +2854,7 @@ input[type="text"]:focus {
 
   .animated_blocks section .feature-title {
     opacity: 1;
+    padding-left: 50px;
   }
 
   .animated_blocks section {
