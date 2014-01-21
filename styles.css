@@ -2095,11 +2095,7 @@ span.add-hint:after {
     white-space: nowrap;
   }
 
-  #login {
-    overflow: scroll;
-  }
-
-  .login__background {
+  .login__social-block {
     display: none;
   }
 
